@@ -584,7 +584,7 @@ input::-webkit-inner-spin-button {
   }
   
   .svgIcon svg {
-      width: 100%;
+      width: 50%;
       height: auto;
   }
   
@@ -601,7 +601,7 @@ input::-webkit-inner-spin-button {
 
   .text {
       width: 65%;
-      font-size: 0.5rem; /* Supondo que o tamanho da fonte padrão precisa ser reduzido */
+      font-size: 0.55rem; /* Supondo que o tamanho da fonte padrão precisa ser reduzido */
   }
 
   .svgIcon {
