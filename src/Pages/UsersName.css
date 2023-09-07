@@ -595,7 +595,7 @@ input::-webkit-inner-spin-button {
       100% { opacity: 0.3; }
   }
   
-  .svgIcon.flash {
+  .Btn.flash {
       animation: flashAnimation 0.5s ease-in-out;
   }
 
