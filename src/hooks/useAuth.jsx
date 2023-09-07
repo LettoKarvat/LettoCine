@@ -34,7 +34,7 @@ export const useAuth = () => {
     setError(null);
 
     const newUser = {
-      email: data.email,
+      email: data.email.toLowerCase(),
       password: data.password,
       fullname: data.fullname,
     };
@@ -62,7 +62,7 @@ export const useAuth = () => {
   const login = async (data) => {
     setLoading(true);
     const loginUser = {
-      email: data.email,
+      email: data.email.toLowerCase(),
       password: data.password,
     };
 
