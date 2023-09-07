@@ -1,0 +1,16 @@
+.loader {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .loader-text {
+    font-size: 24px;
+    color: rgb(192, 187, 187);
+    margin-bottom: 20px;
+    align-self: center;
+  }
+  
+ 

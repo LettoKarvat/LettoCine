@@ -1,0 +1,105 @@
+/* App.css */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  
+  background-size: cover;
+  max-height: 100%;
+  backdrop-filter: brightness(60%);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to bottom, #060672cc, #0e514c); /* Fundo dourado com 50% de transparência */
+  padding: 20px; /* Adicionando algum espaçamento interno */
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil para dar destaque */
+  flex-direction: column;
+}
+
+h1 {
+  color: #333;
+}
+
+.btn {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  
+}
+.btn {
+  border: none;
+  width: 15em;
+  height: 5em;
+  border-radius: 3em;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: #404bec;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+  fill: #AAAAAA;
+  transition: all 800ms ease;
+}
+
+.text {
+  font-weight: 600;
+  color: #AAAAAA;
+  font-size: medium;
+}
+
+.btn:hover {
+  background: linear-gradient(0deg,#A47CF3,#683FEA);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+  inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+  0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+  0px 0px 180px 0px #9917FF;
+  transform: translateY(-2px);
+}
+
+.btn:hover .text {
+  color: white;
+}
+
+.btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
+} 
+
+.custom-h2 {
+  margin-bottom: 5px;  /* Reduz a margem inferior do h2 para que o h3 fique mais próximo */
+}
+
+.custom-h3 {
+  font-size: 0.9em;    /* Torna o h3 ligeiramente menor */
+  font-weight: bold;   /* Torna o texto em negrito */
+  margin-top: 0;      /* Remove a margem superior para que ele fique mais próximo do h2 */
+}
+
+
+a {
+  margin-top: 20px;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease;  /* Adicionando uma transição suave à propriedade color */
+}
+
+a:hover {
+  color: rgb(0, 89, 255);
+}
+
+

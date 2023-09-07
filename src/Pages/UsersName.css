@@ -1,0 +1,624 @@
+.user {
+  margin-top: 20px;
+  display: flex;                /* Define o display como flexível para um layout de caixas */
+  flex-wrap: wrap;              /* Permite que os elementos se ajustem em várias linhas se necessário */
+  gap: 60px;  
+  padding: 20px  
+                  /* Espaço entre os elementos filho */
+}
+
+/* Estiliza a caixa de cada usuário */
+.card {
+  width: 220px;
+  height: 304px;
+  border-radius: 30px;
+  background: #212121;
+  color: white;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+              -15px -15px 30px rgb(60, 60, 60);
+  padding: 35px;
+ }
+
+ .card a {
+  color: lightblue; /* Define a cor do link como azul claro */
+  text-decoration: none; /* Remove o sublinhado do link (opcional, mas muitas vezes usado para estilização) */
+}
+
+.card a:hover {
+  color: deepskyblue; /* Uma variação mais escura de azul quando o mouse passar por cima */
+  text-decoration: underline; /* Adiciona sublinhado ao link no hover (opcional) */
+}
+
+.card button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(61, 106, 255);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.card button:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.card button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+.card button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.card button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+
+.card h2 {
+  border-bottom: 2px solid white; /* Adiciona uma borda inferior branca com 2px de espessura */
+  padding-bottom: 10px;          /* Adiciona um pouco de espaço abaixo do texto antes da borda */
+  margin-bottom: 15px;           /* Adiciona espaço após a borda para separar do próximo elemento */
+}
+
+.card li:nth-of-type(1) {
+  color: #a9a9a9; /* Cor da primeira linha */
+}
+
+.card li:nth-of-type(2) {
+  color: #3183a3; /* Cor da segunda linha */
+}
+
+.card li:nth-of-type(3), 
+.card li:nth-of-type(4) {
+  color: #FFD54F; /* Cor da terceira e quarta linha */
+  font-size: 0.9em; /* Reduz o tamanho da fonte em 10% em relação ao tamanho atual */
+}
+
+
+
+
+
+.card ul {
+  list-style-type: none; /* Remove os bullets */
+  padding-left: 0;       /* Remove o padding padrão */
+  margin-top: 0;         /* Reduz o espaço acima da lista */
+  margin-bottom: 15px;   /* Adiciona algum espaço abaixo da lista */
+}
+
+
+
+
+/* Define o estilo do overlay */
+.overlay {
+  position: fixed;               /* Fixa o overlay na janela do navegador */
+  top: 0;                        /* Início no topo da página */
+  left: 0;                       /* Início à esquerda da página */
+  width: 100%;                   /* Largura total da página */
+  height: 100%;                  /* Altura total da página */
+  background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo semi-transparente */
+  z-index: 999;                  /* Nível de empilhamento (sempre visível) */
+  opacity: 0;                    /* Inicialmente invisível */
+  pointer-events: none;          /* Desativa interações quando invisível */
+  transition: opacity 0.5s ease-out; /* Transição de opacidade */
+}
+
+/* Classe para tornar o overlay visível */
+.overlay-visible {
+  opacity: 1;            
+  display: flex;
+  align-items: center;
+  justify-content: center;        /* Torna o overlay visível */
+  pointer-events: auto;           /* Ativa interações quando visível */
+}
+
+.renewalBox {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: rgba(93, 92, 93, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* Adicionado do pack-container */
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  align-items: center;
+  animation: slideDown 0.5s forwards;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 12px; /* Adicionado do pack-container */
+  color: #fff; /* Adicionado do pack-container */
+}
+
+  /* Define a animação slideDown */
+@keyframes slideDown {
+  from {
+     /* Estado inicial da animação */
+    opacity: 0;
+    transform: translateY(-100%); /* O elemento começará de sua posição original fora da janela */
+  }
+  to {
+    /* Estado final da animação */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}
+
+/* Classe para tornar a caixa de renovação visível */
+.renewalBox-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center; /* Modificado de 'left' para 'center' para manter a estilização do pack-container */
+}
+.header {
+  position: relative;
+  margin: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 0;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.title {
+  display: block;
+  font-family: sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-transform: uppercase;
+  color: #fff
+}
+
+.price-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4px;
+  font-family: sans-serif;
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.price-container span:first-child {
+  margin-top: 10px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.price-container span:last-child {
+  align-self: flex-end;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.lists {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list span {
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background-color: rgba(255, 255, 255, 0.185);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list span svg {
+  height: 12px;
+  width: 12px;
+}
+
+.list p {
+  display: block;
+  font-family: sans-serif;
+}
+.input-wrapper {
+  position: relative;
+  width: 200px;
+  margin: 50px auto;
+}
+
+.input-box {
+  font-size: 16px;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  color: #08AEEA;
+  width: 100%;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Para esconder as flechas no Chrome, Safari e Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para esconder as flechas no Firefox */
+.input-box {
+  /* Esta é a propriedade padrão para WebKit e Blink (Chrome, Safari, Opera, etc.) */
+  -webkit-appearance: none;
+  
+  /* Para o Firefox, vamos usar outra abordagem */
+  appearance: textfield; 
+}
+
+/* Para o Firefox, esconda os incrementadores internos */
+.input-box::-webkit-inner-spin-button,
+.input-box::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #08AEEA;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.input-box:focus {
+  border-color: #08AEEA;
+  outline: none;
+}
+
+.input-box:focus + .underline {
+  transform: scaleX(1);
+}
+
+
+.button-container {
+  width: 180px;
+  height: 40px;
+  background-image: linear-gradient(rgb(132, 100, 239), rgb(61, 33, 152));
+  border: none;
+  border-radius: 50px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 1px 3px 0px rgb(86, 52, 238);
+  transition-duration: .3s;
+  position: relative; /* Isso permitirá que os elementos absolutos se posicionem em relação a este botão */
+  overflow: hidden;   /* Isso evitará que o conteúdo se estenda para fora dos limites do botão */
+
+}
+
+.button-container:hover::before {
+  animation: sh02 0.5s 0s linear;
+}
+
+.button-container::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+.button-container:active {
+  transform: translate(2px ,0px);
+  box-shadow: 0px 1px 0px rgb(139, 113, 255);
+  padding-bottom: 1px;
+}
+
+.cartIcon {
+  width: 14px;
+  height: fit-content;
+  background: transparent; /* Definindo o fundo como transparente */
+  cursor: pointer; /* Alterando o cursor para mãozinha */
+}
+
+.cartIcon path {
+  fill: rgb(9, 9, 9);
+}
+
+
+
+/* Estiliza o campo de número dentro de renewalBox */
+.renewalBox input[type="number"] {
+  width: 50px;
+  margin: 10px;
+  text-align: center;
+}
+
+.overlay-visible {
+  opacity: 1;
+  display: block;
+  pointer-events: auto; /* Reativado para permitir cliques */
+}
+/* Classe para aplicar a animação slideUp em renewalBox */
+.renewalBox.slideUp {
+  animation: slideUp 0.5s forwards;
+}
+
+.Btn {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+}
+
+.text {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(2, 153, 153);
+}
+
+.svgIcon {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: teal;
+}
+
+.Btn:hover .text {
+  background-color: rgb(0, 133, 133);
+}
+
+.Btn:hover .svgIcon {
+  background-color: rgb(0, 105, 105);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carde__counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  padding: 5px;
+  background: #666;
+  border-radius: 50px;
+}
+
+.carde__counter-score, .carde__btn {
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--main-color);
+}
+
+.carde__btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: none;
+  background: transparent;
+}
+
+.carde__btn-plus {
+  background: var(--bg-color);
+}
+.carde__btn:active {
+  transform: translateY(2px); /* Move o botão 2px para baixo */
+  filter: brightness(90%);   /* Escurece o botão em 10% */
+}
+
+.carde__btn-plus:active {
+  background: darken(var(--bg-color), 10%); /* Escurece a cor de fundo em 10% */
+}
+
+
+@media (max-width: 600px) {
+  .renewalBox {
+      width: 60%; /* Reduz a largura do renewalBox para 60% em telas pequenas, fazendo parecer 40% menor */
+      padding: 12px; /* Reduz o padding */
+  }
+
+  .header {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+  }
+
+  .title {
+      font-size: 0.7rem; /* Reduz o tamanho da fonte */
+      line-height: 1rem;
+  }
+
+  .price-container {
+      margin-top: 0.6rem; /* Reduz a margem superior */
+      font-size: 3rem; /* Reduz o tamanho da fonte */
+  }
+
+  .price-container span:first-child, .price-container span:last-child {
+      font-size: 1.5rem; /* Reduz o tamanho da fonte */
+  }
+
+  .lists .list span {
+      height: 20px; /* Reduz a altura */
+      width: 20px; /* Reduz a largura */
+  }
+
+  .lists .list span svg {
+      height: 8px; /* Reduz a altura */
+      width: 8px; /* Reduz a largura */
+  }
+
+  .input-wrapper {
+      width: 140px; /* Reduz a largura */
+      margin: 30px auto; /* Reduz a margem */
+  }
+
+  .button-container {
+      width: 120px; /* Reduz a largura */
+      height: 30px; /* Reduz a altura */
+  }
+
+
+
+  .Btn {
+      width: 60px; 
+      height: 21px;
+      box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.164);
+  }
+
+  .text {
+      width: 65%;
+      font-size: 0.8rem; /* Supondo que o tamanho da fonte padrão precisa ser reduzido */
+  }
+
+  .svgIcon {
+      width: 35%;
+      /* Não é necessário ajustar o tamanho do ícone SVG aqui se for um ícone SVG escalável. 
+         Ele se ajustará automaticamente com base no tamanho do container. */
+  }
+
+  
+
+  .carde__counter {
+    gap: 5px; /* 40% menos de 15px */
+    padding: 3px;
+    border-radius: 15px; /* 40% menos de 50px */
+}
+
+
+  .carde__counter-score, .carde__btn {
+      font-size: 13.2px; /* 40% menor que 22px */
+  }
+
+  .carde__btn {
+      width: 18px;
+      height: 18px;
+  }
+
+  .price-container {
+    font-size: 0.6rem; /* 60% do valor original, supondo que era 1rem antes */
+    gap: 2.4px; /* 60% do valor original, supondo que era 4px antes */
+}
+
+.custom-h2 {
+    font-size: 1.2rem; /* 60% do valor original, supondo que era 2rem antes */
+    margin-top: 12px; /* 60% do valor original, supondo que era 20px antes */
+    margin-bottom: 12px; /* 60% do valor original, supondo que era 20px antes */
+}
+
+img {
+    max-width: 60%; /* Reduz para 60% do tamanho da imagem original */
+}
+
+}
