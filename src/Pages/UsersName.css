@@ -460,6 +460,7 @@ input::-webkit-inner-spin-button {
   align-items: center;
   justify-content: center;
   color: white;
+  font-size: 0.7rem;
   background-color: rgb(2, 153, 153);
 }
 
