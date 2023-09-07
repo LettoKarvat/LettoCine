@@ -528,6 +528,8 @@ input::-webkit-inner-spin-button {
   .renewalBox {
       width: 60%; /* Reduz a largura do renewalBox para 60% em telas pequenas, fazendo parecer 40% menor */
       padding: 12px; /* Reduz o padding */
+      top: 10%; /* por exemplo, deixando 10% de espaço no topo */
+    
   }
 
   .header {
