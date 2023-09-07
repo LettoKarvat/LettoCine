@@ -30,8 +30,9 @@ function Home({ auth, fetchTestData, loadingTest }) {
             </div>
         </div>
         <UsersName token={auth.user.token} setTotalUsers={setTotalUsers} setLoadingUsers={setLoadingUsers}/>
-        <button className="btn" onClick={auth.logout}>Sair</button>
         { !loadingUsers && totalUsers < 3 && <button className="btn" disabled={creatingTest} onClick={handleCreateTest}>Criar teste</button> }
+        <button className="btn" onClick={auth.logout}>Sair</button>
+        
 
         {loadingTest && <div className="loaderr">
        <p>Adicionando</p>
