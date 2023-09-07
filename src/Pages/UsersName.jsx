@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import './UsersName.css';
-import './LoadingQr.css'
 import './Price.css'
 import '../App'
 import { useRenewUser } from '../hooks/useRenewUser';
