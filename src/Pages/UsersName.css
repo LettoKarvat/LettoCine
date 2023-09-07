@@ -582,7 +582,7 @@ input::-webkit-inner-spin-button {
 
   .text {
       width: 65%;
-      font-size: 0.8rem; /* Supondo que o tamanho da fonte padrão precisa ser reduzido */
+      font-size: 0.3rem; /* Supondo que o tamanho da fonte padrão precisa ser reduzido */
   }
 
   .svgIcon {
