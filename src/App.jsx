@@ -25,6 +25,8 @@ function App() {
   const { loadingTest, testData, fetchTestData } = useFetchTestData(auth?.user?.token);
   const { deleteUser, loadingDelete } = useDeleteUser();
 
+
+
   const handleLogin = async (userData) => {
     setAuthenticating(true);
     await login(userData);
@@ -57,19 +59,19 @@ function App() {
 
   if (authenticating) {
     return (
-        <div className="App">
-           <div class="cssload-container">
-   <ul class="cssload-flex-container">
-      <li>
-         <span class="cssload-loading cssload-one"></span>
-         <span class="cssload-loading cssload-two"></span>
-         <span class="cssload-loading-center"></span>
-      </li>
-   </ul>
-</div>
+      <div className="App">
+        <div className="cssload-container">
+          <ul className="cssload-flex-container">
+            <li>
+              <span className="cssload-loading cssload-one"></span>
+              <span className="cssload-loading cssload-two"></span>
+              <span className="cssload-loading-center"></span>
+            </li>
+          </ul>
         </div>
+      </div>
     );
-}
+  }
 
 
   if (loadingDelete) {
@@ -77,19 +79,21 @@ function App() {
   }
 
   return (
-    <div className="App">
-      
+
+
+
+    <div className='App'>
       <AuthProvider value={{ auth, login, logout, signUp }}>
         <Router>
           {auth.isAuthenticated ? (
             <Routes>
-              <Route path="/" element={<Home 
-                auth={auth} 
-                fetchTestData={fetchTestData} 
+              <Route path="/" element={<Home
+                auth={auth}
+                fetchTestData={fetchTestData}
                 loadingTest={loadingTest}
-                
+
               />} />
-              
+
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           ) : (
@@ -102,6 +106,7 @@ function App() {
         </Router>
       </AuthProvider>
     </div>
+
   );
 }
 

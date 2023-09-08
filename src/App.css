@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 
@@ -11,6 +12,8 @@ body {
   background-size: cover;
   max-height: 100%;
   backdrop-filter: brightness(60%);
+  background-image: linear-gradient(to bottom, #97979bcc, #000000); /* Fundo dourado com 50% de transparência */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil para dar destaque */
 }
 
 .App {
@@ -22,10 +25,7 @@ body {
   margin: 0 auto;
   text-align: center;
   font-family: Arial, sans-serif;
-  background-image: linear-gradient(to bottom, #060672cc, #0e514c); /* Fundo dourado com 50% de transparência */
   padding: 20px; /* Adicionando algum espaçamento interno */
-  border-radius: 10px; /* Cantos arredondados */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil para dar destaque */
   flex-direction: column;
 }
 
@@ -33,24 +33,6 @@ h1 {
   color: #333;
 }
 
-.btn {
-  margin: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  
-}
-.btn {
-  border: none;
-  width: 15em;
-  height: 5em;
-  border-radius: 3em;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  background: #404bec;
-  cursor: pointer;
-  transition: all 450ms ease-in-out;
-}
 
 .sparkle {
   fill: #AAAAAA;
@@ -63,23 +45,7 @@ h1 {
   font-size: medium;
 }
 
-.btn:hover {
-  background: linear-gradient(0deg,#A47CF3,#683FEA);
-  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
-  inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
-  0px 0px 0px 4px rgba(255, 255, 255, 0.2),
-  0px 0px 180px 0px #9917FF;
-  transform: translateY(-2px);
-}
 
-.btn:hover .text {
-  color: white;
-}
-
-.btn:hover .sparkle {
-  fill: white;
-  transform: scale(1.2);
-} 
 
 .custom-h2 {
   margin-bottom: 5px;  /* Reduz a margem inferior do h2 para que o h3 fique mais próximo */
@@ -101,5 +67,6 @@ a {
 a:hover {
   color: rgb(0, 89, 255);
 }
+
 
 

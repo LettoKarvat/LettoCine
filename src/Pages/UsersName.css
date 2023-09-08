@@ -1,11 +1,13 @@
 .user {
   margin-top: 20px;
-  display: flex;                /* Define o display como flexível para um layout de caixas */
-  flex-wrap: wrap;              /* Permite que os elementos se ajustem em várias linhas se necessário */
+  display: flex;        
+  flex-wrap: wrap;      
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center;     /* Centraliza os itens verticalmente */
   gap: 60px;  
-  padding: 20px  
-                  /* Espaço entre os elementos filho */
+  padding: 20px;       
 }
+
 
 /* Estiliza a caixa de cada usuário */
 .card {
@@ -159,6 +161,23 @@
   justify-content: center;        /* Torna o overlay visível */
   pointer-events: auto;           /* Ativa interações quando visível */
 }
+.UserSenha {
+  color: darkgray; /* Escolha a tonalidade de cinza que preferir */
+  text-decoration: underline;
+}
+
+.vermelho {
+  color: red;
+}
+
+.laranja {
+  color: orange;
+}
+
+.normal {
+  color: black; /* ou qualquer outra cor que você deseja para o estado "normal" */
+}
+
 
 .renewalBox {
   width: 80%;
