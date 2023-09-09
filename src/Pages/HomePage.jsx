@@ -25,7 +25,7 @@ function Home({ auth, fetchTestData, loadingTest }) {
   return (
 
     <div>
-      <div className='menu'>
+      <div className={`menu ${isMenuVisible ? 'menu--visible' : ''}`}>
         <label
           className={`buttons__burger ${isMenuVisible ? 'buttons__burger--left' : ''}`}
           htmlFor="burger"
@@ -44,9 +44,9 @@ function Home({ auth, fetchTestData, loadingTest }) {
               <li><button className="btn" onClick={auth.logout}>Sair</button></li>
             </ul>
           </div>
-
         )}
       </div>
+
       <div id="page">
 
         <div id="container">
