@@ -30,7 +30,11 @@
 
 .buttons__burger--left {
   left: 50px;
-
+  background-color: #454547;
+  cursor: pointer;
+  border-radius: 9px;
+  box-shadow: 0px 1px 2px #2B3044,
+    0px 4px 16px #2B3044;
   /* Esta classe será adicionada condicionalmente para mover o botão para a esquerda */
 }
 
@@ -55,6 +59,7 @@
   top: 0;
   left: 0;
   transform-origin: left center;
+
 }
 
 .buttons__burger span:nth-of-type(2) {
@@ -135,12 +140,7 @@
 }
 
 .sp {
-  background: linear-gradient(90deg,
-      #866ee7,
-      #ea60da,
-      #ed8f57,
-      #fbd41d,
-      #2cca91);
+  background: #2cca91;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
