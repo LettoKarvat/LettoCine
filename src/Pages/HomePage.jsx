@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import UsersName from './UsersName';
 import './HomePage.css'
 import '../Loading.css'
@@ -10,6 +9,7 @@ function Home({ auth, fetchTestData, loadingTest }) {
   const [loadingUsers, setLoadingUsers] = useState(true);
   const [creatingTest, setCreatingTest] = useState(false); // novo estado para controlar se o teste está sendo criado ou não
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+
 
   useEffect(() => {
     if (!loadingTest) {
@@ -26,14 +26,18 @@ function Home({ auth, fetchTestData, loadingTest }) {
 
     <div>
       <div className='menu'>
-        <label className="buttons__burger" htmlFor="burger">
+        <label
+          className={`buttons__burger ${isMenuVisible ? 'buttons__burger--left' : ''}`}
+          htmlFor="burger"
+        >
           <input type="checkbox" id="burger" onClick={() => setIsMenuVisible(!isMenuVisible)} />
           <span></span>
           <span></span>
           <span></span>
         </label>
+
         {isMenuVisible && (
-          <div className="menu">
+          <div>
             <ul>
               <li>Item 1</li>
               <li>Item 2</li>
@@ -57,11 +61,19 @@ function Home({ auth, fetchTestData, loadingTest }) {
 
       <UsersName token={auth.user.token} setTotalUsers={setTotalUsers} setLoadingUsers={setLoadingUsers} />
       {!loadingUsers && totalUsers < 3 && <button className="btn" disabled={creatingTest} onClick={handleCreateTest}>
-        <div className="texto-btn">
-          Criar
+
+        {loadingTest ? <div className="texto-btn">
+          Criando
           <br />
           Teste
         </div>
+          :
+          <div className="texto-btn">
+            Criar
+            <br />
+            Teste
+          </div>
+        }
         <div id="clip">
           <div id="leftTop" class="corner"></div>
           <div id="rightBottom" class="corner"></div>
