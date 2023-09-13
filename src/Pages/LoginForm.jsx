@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import styles from './LoginForm.module.css';
 import '../App.css';
 
-function LoginForm({ onLogin, setAuthenticating, errorMessage }) {
+function LoginForm({ onLogin, errorMessage }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [definErro, setDefinErro] = useState('');
+
   // Adicionado novo estado para rastrear a mensagem de erro
 
   const handleSubmit = async (event) => {
@@ -18,16 +18,13 @@ function LoginForm({ onLogin, setAuthenticating, errorMessage }) {
 
       if (result === "error") {
         // Defina a mensagem de erro aqui usando um método passado através das props
-        console.log('Erro: ', errorMessage);
-        // setDefinErro('erro'); // Certifique-se de que este método está definido e está atualizando o estado errorMessage corretamente
+
       } else {
         // Limpe a mensagem de erro em caso de sucesso
         // setDefinErro(null);
       }
     } catch (error) {
-      console.log('Erro:', error);
-      // Defina uma mensagem de erro em caso de uma exceção ser lançada
-      // setDefinErro('Ocorreu um erro inesperado.');
+
     }
   };
 

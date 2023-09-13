@@ -55,7 +55,7 @@ export const useAuth = () => {
     } catch (error) {
       setLoading(false);
       setError(error.message);
-      console.error('Error creating user', error);
+
     }
   };
 

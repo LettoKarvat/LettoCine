@@ -9,7 +9,7 @@ import { AuthProvider } from './context/authContext';
 // Hooks
 import { useAuth } from './hooks/useAuth';
 import useFetchTestData from './hooks/useFetchTestData';
-import useDeleteUser from './hooks/useDeleteUser';
+
 
 // Pages
 import LoginForm from './Pages/LoginForm';
@@ -24,7 +24,7 @@ function App() {
 
   const { auth, signUp, login, logout } = useAuth();
   const { loadingTest, testData, fetchTestData } = useFetchTestData(auth?.user?.token);
-  const { deleteUser, loadingDelete } = useDeleteUser();
+
 
 
 
@@ -89,9 +89,7 @@ function App() {
   }
 
 
-  if (loadingDelete) {
-    return <div className="App"><p>Deletando...</p></div>;
-  }
+
 
   return (
     <div className='App'>

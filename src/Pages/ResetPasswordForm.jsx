@@ -37,7 +37,7 @@ const ResetPasswordForm = () => {
         } catch (error) {
             // Se ocorrer um erro, podemos definir uma mensagem de erro
             setErrorMessage('Ocorreu um erro ao redefinir a senha.');
-            console.error('Houve um problema com a operação fetch: ', error);
+
         }
     };
 

@@ -41,7 +41,7 @@ function Home({ auth, fetchTestData, loadingTest }) {
             <ul>
               <li>Item 1</li>
               <li>Item 2</li>
-              <button data-label="Register" class="rainbow-hover" onClick={auth.logout}>
+              <button data-label="Register" className="rainbow-hover" onClick={auth.logout}>
                 <span className="sp">S a i r</span>
               </button>
 
