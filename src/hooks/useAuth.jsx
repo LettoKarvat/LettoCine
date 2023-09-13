@@ -51,7 +51,7 @@ export const useAuth = () => {
       setLoading(false);
 
       return response.data.result;
-    
+
     } catch (error) {
       setLoading(false);
       setError(error.message);
@@ -76,13 +76,13 @@ export const useAuth = () => {
 
       setUser(response.data.result); // Atualizar o estado do usuário
       setLoading(false);
-      
+
       return response.data.result;
     } catch (error) {
       setLoading(false);
       setError(error.message);
-      console.error('Error logging in user', error);
       localStorage.removeItem('user');
+      return 'error'
     }
   };
 

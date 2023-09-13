@@ -1,6 +1,7 @@
 .group {
   position: relative;
-  margin-bottom: 25px; /* Espaço entre grupos para evitar sobreposição de labels */
+  margin-bottom: 25px;
+  /* Espaço entre grupos para evitar sobreposição de labels */
 }
 
 .form {
@@ -55,8 +56,9 @@
   color: #1cceff;
 }
 
-.main-input:focus ~ .label-email, /* Correção da digitação */
-.main-input:valid ~ .label-email {
+.main-input:focus~.label-email,
+/* Correção da digitação */
+.main-input:valid~.label-email {
   top: -20px;
   font-size: 14px;
   color: #1cceff;
@@ -72,16 +74,17 @@
   opacity: 0.5;
 }
 
-.main-input:focus ~ .highlight-span {
+.main-input:focus~.highlight-span {
   animation: input-focus 0.3s ease;
 }
 
 @keyframes input-focus {
   from {
-      background: #1ce8ff;
+    background: #1ce8ff;
   }
+
   to {
-      width: 185px;
+    width: 185px;
   }
 }
 
@@ -120,4 +123,75 @@
 
 .submit:active {
   transform: scale(0.9);
+}
+
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+.successMessage {
+  padding-bottom: 20px;
+  font-size: 16px;
+  /* Ajuste o tamanho da fonte conforme necessário */
+  font-weight: normal;
+  /* Ajuste o peso da fonte conforme necessário */
+  letter-spacing: .3px;
+  /* Ajuste o espaçamento das letras conforme necessário */
+  color: rgb(75, 251, 17);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.backToLogin {
+  text-align: center;
+  margin-top: 50px;
+  /* Ajuste o preenchimento conforme necessário */
+}
+
+.backToLogin span {
+  cursor: pointer;
+  color: #0033ff;
+  font-size: 15px;
+  /* Ajuste o tamanho da fonte conforme necessário */
+  font-weight: normal;
+  /* Ajuste o peso da fonte conforme necessário */
+  letter-spacing: .3px;
+  /* Ajuste o espaçamento das letras conforme necessário */
+  text-decoration: underline;
+  /* Adicionei sublinhado para indicar que é um link clicável */
+}
+
+.backToLogin span:hover {
+  color: #1cceff;
+
+  /* Escolha a cor que deseja */
+}
+
+.backToLogin span {
+  transition: color 0.3s ease;
+  /* Adiciona uma transição suave à mudança de cor */
+}
+
+.backToLogin span:hover {
+  font-size: 18px;
+  /* Ajuste o tamanho conforme necessário */
+}
+
+
+.resetLink {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  /* Ajuste conforme necessário */
+  color: #37ff1c;
+  /* Ajuste conforme necessário */
+  text-decoration: underline;
+  /* Ajuste conforme necessário */
+  cursor: pointer;
+  font-size: 14px;
+  /* Ajuste conforme necessário */
 }

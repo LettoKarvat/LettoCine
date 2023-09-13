@@ -1,21 +1,46 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './LoginForm.module.css';
+import '../App.css';
 
-function LoginForm(props) {
+function LoginForm({ onLogin, setAuthenticating, errorMessage }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [definErro, setDefinErro] = useState('');
+  // Adicionado novo estado para rastrear a mensagem de erro
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = { email, password };
-    props.onLogin(data);
+
+    try {
+      const result = await onLogin(data);
+
+      if (result === "error") {
+        // Defina a mensagem de erro aqui usando um método passado através das props
+        console.log('Erro: ', errorMessage);
+        // setDefinErro('erro'); // Certifique-se de que este método está definido e está atualizando o estado errorMessage corretamente
+      } else {
+        // Limpe a mensagem de erro em caso de sucesso
+        // setDefinErro(null);
+      }
+    } catch (error) {
+      console.log('Erro:', error);
+      // Defina uma mensagem de erro em caso de uma exceção ser lançada
+      // setDefinErro('Ocorreu um erro inesperado.');
+    }
   };
 
+
+
   return (
-    <div className={styles.someClass}>
-      <form className={styles.form} onSubmit={handleSubmit}>
+    <div>
+      <form id="loginForm" className={styles.form} onSubmit={handleSubmit}>
+
         <p>Login</p>
+
+        {/* Mostrar a mensagem de erro se errorMessage existir */}
+        {errorMessage && <div className={styles.error}>Usuário ou senha incorreta</div>}
         <div className={styles.group}>
           <input
             required
@@ -38,12 +63,14 @@ function LoginForm(props) {
             />
             <span className={styles['highlight-span']}></span>
             <label className={`${styles['label-email']} ${password && styles['label-email-hidden']}`}>Senha</label>
+            <br />
+            <Link to="/reset" className={styles.resetLink}>Esqueceu sua senha?</Link>
           </div>
         </div>
         <button className={styles.submit} type="submit"> <span>Entrar</span> </button>
         <Link to="/registro">Não tem uma conta? Registre-se!</Link>
       </form>
-      
+
     </div>
   );
 }

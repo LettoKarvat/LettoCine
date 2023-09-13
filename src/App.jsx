@@ -15,11 +15,12 @@ import useDeleteUser from './hooks/useDeleteUser';
 import LoginForm from './Pages/LoginForm';
 import SignUpForm from './Pages/SignUpForm';
 import Home from './Pages/HomePage';
+import ResetPasswordForm from './Pages/ResetPasswordForm';
 
 function App() {
   const [loading, setLoading] = useState(true);
   const [authenticating, setAuthenticating] = useState(false);
-  const [deleteUsername, setDeleteUsername] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const { auth, signUp, login, logout } = useAuth();
   const { loadingTest, testData, fetchTestData } = useFetchTestData(auth?.user?.token);
@@ -29,9 +30,26 @@ function App() {
 
   const handleLogin = async (userData) => {
     setAuthenticating(true);
-    await login(userData);
-    setAuthenticating(false);
+    try {
+      const final = await login(userData);
+
+      setAuthenticating(false);
+
+      if (final === 'error') {
+        setErrorMessage('Usuário ou senha incorretos');
+        return 'error';
+      } else {
+        setErrorMessage(null); // Limpe a mensagem de erro em caso de sucesso
+        return 'tudook';
+      }
+    } catch (error) {
+      setAuthenticating(false);
+      console.error('Ocorreu um erro durante o login:', error);
+      setErrorMessage('Ocorreu um erro durante o login.');
+      return 'error';
+    }
   };
+
 
   const handleSignUp = async (userData) => {
     setAuthenticating(true);
@@ -39,9 +57,6 @@ function App() {
     setAuthenticating(false);
   };
 
-  const handleDeleteUser = () => {
-    deleteUser(deleteUsername);
-  };
 
   // Check localStorage when the component mounts
   useEffect(() => {
@@ -79,9 +94,6 @@ function App() {
   }
 
   return (
-
-
-
     <div className='App'>
       <AuthProvider value={{ auth, login, logout, signUp }}>
         <Router>
@@ -93,20 +105,19 @@ function App() {
                 loadingTest={loadingTest}
 
               />} />
-
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           ) : (
             <Routes>
-              <Route path="/login" element={<LoginForm onLogin={handleLogin} />} />
+              <Route path="/login" element={<LoginForm onLogin={handleLogin} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />} />
               <Route path="/registro" element={<SignUpForm onSignUp={handleSignUp} />} />
+              <Route path="/reset" element={<ResetPasswordForm />} /> {/* Adicionando rota para o formulário de redefinição de senha */}
               <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
           )}
         </Router>
       </AuthProvider>
     </div>
-
   );
 }
 

@@ -42,7 +42,7 @@ function Home({ auth, fetchTestData, loadingTest }) {
               <li>Item 1</li>
               <li>Item 2</li>
               <button data-label="Register" class="rainbow-hover" onClick={auth.logout}>
-                <span class="sp">S a i r</span>
+                <span className="sp">S a i r</span>
               </button>
 
             </ul>
@@ -78,13 +78,13 @@ function Home({ auth, fetchTestData, loadingTest }) {
           </div>
         }
         <div id="clip">
-          <div id="leftTop" class="corner"></div>
-          <div id="rightBottom" class="corner"></div>
-          <div id="rightTop" class="corner"></div>
-          <div id="leftBottom" class="corner"></div>
+          <div id="leftTop" className="corner"></div>
+          <div id="rightBottom" className="corner"></div>
+          <div id="rightTop" className="corner"></div>
+          <div id="leftBottom" className="corner"></div>
         </div>
-        <span id="rightArrow" class="arrow"></span>
-        <span id="leftArrow" class="arrow"></span>
+        <span id="rightArrow" className="arrow"></span>
+        <span id="leftArrow" className="arrow"></span>
       </button>
       }
 
