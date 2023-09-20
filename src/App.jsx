@@ -12,6 +12,7 @@ import useFetchTestData from './hooks/useFetchTestData';
 
 
 // Pages
+import AppsPage from './Pages/AppsPage';
 import LoginForm from './Pages/LoginForm';
 import SignUpForm from './Pages/SignUpForm';
 import Home from './Pages/HomePage';
@@ -101,8 +102,14 @@ function App() {
                 auth={auth}
                 fetchTestData={fetchTestData}
                 loadingTest={loadingTest}
-
               />} />
+              <Route path="/applications" element={<AppsPage
+                auth={auth}
+                imageUrl="./assets/img/smarteplayer.jpg"
+                appName="Smarters Player"
+                appLink="https://link.do.seu.app"
+              />
+              } /> {/* Aqui está a nova rota que você adicionou */}
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           ) : (

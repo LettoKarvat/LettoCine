@@ -328,3 +328,89 @@
     transform: translateX(-10px);
   }
 }
+
+
+.button1 {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.button1 svg {
+  margin-right: 3px;
+  transform: rotate(30deg);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.button1 span {
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.button1:hover svg {
+  transform: translateX(5px) rotate(90deg);
+}
+
+.button1:hover span {
+  transform: translateX(7px);
+}
+
+.button1:active {
+  background: linear-gradient(to right, #0a081d, #211d44, #1a1a2a);
+  transform: scale(0.98);
+}
+
+.button1:active svg {
+  transform: translateX(2px) rotate(60deg);
+}
+
+.button1:active span {
+  transform: translateX(3px);
+}
+
+
+
+.button2 {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 17px;
+  padding: 0.8em 1.3em 0.8em 0.9em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  border: none;
+  letter-spacing: 0.05em;
+  border-radius: 16px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.button2 svg {
+  margin-right: 3px;
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.button2:active {
+  background: linear-gradient(to right, #0a081d, #211d44, #1a1a2a);
+  transform: scale(0.98);
+}
+
+.button2:active svg {
+  transform: translateX(2px) rotate(60deg);
+}
+
+.button2:active span {
+  transform: translateX(3px);
+}

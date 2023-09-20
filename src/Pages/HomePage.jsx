@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Menu from '../assets/Menu';
 import UsersName from './UsersName';
 import './HomePage.css'
 import '../Loading.css'
@@ -25,31 +26,8 @@ function Home({ auth, fetchTestData, loadingTest }) {
   return (
 
     <div>
-      <div className={`menu ${isMenuVisible ? 'menu--visible' : ''}`}>
-        <label
-          className={`buttons__burger ${isMenuVisible ? 'buttons__burger--left' : ''}`}
-          htmlFor="burger"
-        >
-          <input type="checkbox" id="burger" onClick={() => setIsMenuVisible(!isMenuVisible)} />
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
 
-        {isMenuVisible && (
-          <div>
-            <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <button data-label="Register" className="rainbow-hover" onClick={auth.logout}>
-                <span className="sp">S a i r</span>
-              </button>
-
-            </ul>
-          </div>
-        )}
-      </div>
-
+      <Menu isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible} auth={auth} />
       <div id="page">
 
         <div id="container">

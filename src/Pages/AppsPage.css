@@ -1,0 +1,45 @@
+/* AppBox.css */
+.app-box {
+    border: 1px solid #000;
+    width: auto;
+    height: auto;
+    /* ajustado para auto para permitir expansão */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    /* adicionado para permitir layout flexível */
+    flex-direction: column;
+    /* adicionado para permitir layout flexível */
+}
+
+.app-box-top {
+    width: 400px;
+    height: 200px;
+    /* Você pode remover essa linha */
+    min-height: 50px;
+    /* Defina uma altura mínima adequada aqui */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+.app-box-bottom {
+    width: 100%;
+    background: #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    /* adicionado para ocupar o espaço restante */
+}
+
+.app-box-bottom p {
+    margin: 0 0 10px 0;
+}
+
+.app-box-bottom button {
+    padding: 10px;
+    border-radius: 5px;
+}
