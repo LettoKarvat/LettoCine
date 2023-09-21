@@ -7,8 +7,10 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 5px 4px 3px rgba(58, 235, 52, 0.428);
+    box-shadow: 5px 5px 10px rgb(129, 229, 102),
+        -5px -5px 10px rgb(81, 213, 112);
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .app-box-top {
@@ -79,4 +81,52 @@ p {
 .buttonApp {
     color: #000;
     background-color: aqua;
+}
+
+
+.buttona {
+    width: 120px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    border: 3px solid rgb(255, 239, 94);
+    background-color: rgb(255, 239, 94);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
+}
+
+.texta {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgb(0, 0, 0);
+}
+
+.arrowa path {
+    fill: rgb(19, 19, 19);
+}
+
+.buttona:hover .arrowa {
+    animation: slide-in-left 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-8px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.buttona:active {
+    transform: scale(0.97);
 }
