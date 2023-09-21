@@ -10,7 +10,7 @@
     position: relative;
     display: block;
     transition: left 0.3s ease;
-    background-color: rgba(84, 84, 84, 0.251);
+    background-color: rgba(84, 84, 84, 0.52);
     /* Adicionado um fundo branco semi-transparente */
     border-radius: 0.5rem;
     /* Adicionado para arredondar os cantos do fundo */
