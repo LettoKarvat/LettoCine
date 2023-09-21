@@ -1,7 +1,7 @@
 .buttons__burger {
     position: absolute;
-    top: 10px;
-    left: 10px;
+
+    left: -10px;
     --size: 3rem;
     --clr: #000;
     width: var(--size);
@@ -10,7 +10,7 @@
     position: relative;
     display: block;
     transition: left 0.3s ease;
-    background-color: rgba(84, 84, 84, 0.52);
+    background-color: rgba(84, 84, 84, 0.698);
     /* Adicionado um fundo branco semi-transparente */
     border-radius: 0.5rem;
     /* Adicionado para arredondar os cantos do fundo */
@@ -76,14 +76,16 @@
 }
 
 .menu {
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0px;
     left: 10px;
     border-radius: 5px;
     padding: 10px;
-
-    /* Adicionado para inicialmente esconder o menu */
+    z-index: 1000;
+    /* Adicionado uma z-index alta */
 }
+
+
 
 .menu--visible {
     background: #212121;

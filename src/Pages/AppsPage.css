@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 400px;
     /* Define uma largura máxima */
-    border-radius: 15px;
+    border-radius: 5px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
 
 .app-box-bottom {
     width: 100%;
-    background: #ccc;
+    background: #383737;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +55,7 @@
 @media (max-width: 600px) {
     .app-box {
         width: 100%;
-        max-width: 200px;
+        max-width: 350px;
         margin-left: 5px;
         /* Permite que a caixa se expanda para a largura total da tela em dispositivos móveis */
     }
@@ -69,4 +69,14 @@
         padding: 0 10px;
         /* Adiciona algum padding em dispositivos móveis */
     }
+}
+
+
+p {
+    color: aliceblue;
+}
+
+.buttonApp {
+    color: #000;
+    background-color: aqua;
 }

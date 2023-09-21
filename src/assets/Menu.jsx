@@ -6,6 +6,8 @@ import '../Loading.css'
 function Menu({ isMenuVisible, setIsMenuVisible, auth }) {
     return (
         <div className={`menu ${isMenuVisible ? 'menu--visible' : ''}`}>
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+
             <label
                 className={`buttons__burger ${isMenuVisible ? 'buttons__burger--left' : ''}`}
                 htmlFor="burger"
