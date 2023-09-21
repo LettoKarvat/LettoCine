@@ -3,7 +3,7 @@
 
     left: -10px;
     --size: 3rem;
-    --clr: #000;
+    --clr: #020202;
     width: var(--size);
     height: calc(0.7 * var(--size));
     cursor: pointer;
@@ -14,8 +14,8 @@
     /* Adicionado um fundo branco semi-transparente */
     border-radius: 0.5rem;
     /* Adicionado para arredondar os cantos do fundo */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    /* Adicionado uma sombra sutil para dar um efeito 3D */
+    box-shadow: 5px 5px 10px rgb(255, 255, 255),
+        -5px -5px 15px rgb(255, 255, 255);
 }
 
 
@@ -23,8 +23,8 @@
     left: 100px;
     cursor: pointer;
     border-radius: 9px;
-
-    /* Esta classe será adicionada condicionalmente para mover o botão para a esquerda */
+    box-shadow: none
+        /* Esta classe será adicionada condicionalmente para mover o botão para a esquerda */
 }
 
 .buttons__burger #burger {
