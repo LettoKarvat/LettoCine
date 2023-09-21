@@ -1,38 +1,62 @@
 /* App.css */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+}
 
 body {
-  
+  background: linear-gradient(to bottom, #97979bcc, #000000);
   background-size: cover;
-  max-height: 100%;
+  background-attachment: fixed;
+  /* Isso ajudará a manter o background fixo enquanto o conteúdo rola */
   backdrop-filter: brightness(60%);
-  background-image: linear-gradient(to bottom, #97979bcc, #000000); /* Fundo dourado com 50% de transparência */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil para dar destaque */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* O resto do seu CSS permanece o mesmo */
+html {
+  height: 100%;
+  background: linear-gradient(to bottom, #97979bcc, #000000);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background-color: transparent;
+  /* Define o fundo do body como transparente para que o gradiente do html possa ser visto */
+  backdrop-filter: brightness(60%);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* O resto do seu CSS permanece o mesmo */
+
 
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  /* Alterado de center para flex-start para alinhar o conteúdo no topo */
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
+  /* Alterado de 100vh para 100% */
   margin: 0 auto;
   text-align: center;
   font-family: Arial, sans-serif;
-  padding: 20px; /* Adicionando algum espaçamento interno */
-  flex-direction: column;
+  padding: 20px;
 }
 
 h1 {
   color: #333;
 }
-
 
 .sparkle {
   fill: #AAAAAA;
@@ -45,28 +69,22 @@ h1 {
   font-size: medium;
 }
 
-
-
 .custom-h2 {
-  margin-bottom: 5px;  /* Reduz a margem inferior do h2 para que o h3 fique mais próximo */
+  margin-bottom: 5px;
 }
 
 .custom-h3 {
-  font-size: 0.9em;    /* Torna o h3 ligeiramente menor */
-  font-weight: bold;   /* Torna o texto em negrito */
-  margin-top: 0;      /* Remove a margem superior para que ele fique mais próximo do h2 */
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-top: 0;
 }
-
 
 a {
   margin-top: 20px;
   color: rgb(255, 255, 255);
-  transition: color 0.3s ease;  /* Adicionando uma transição suave à propriedade color */
+  transition: color 0.3s ease;
 }
 
 a:hover {
   color: rgb(0, 89, 255);
 }
-
-
-

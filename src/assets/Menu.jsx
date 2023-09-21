@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Pages/HomePage.css'
+import './Menu.css'
 import '../Loading.css'
 
 function Menu({ isMenuVisible, setIsMenuVisible, auth }) {
