@@ -43,3 +43,22 @@
     padding: 10px;
     border-radius: 5px;
 }
+
+.containerBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* Adiciona espaço entre os itens */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+    height: 100vh;
+    /* Define a altura para 100% da altura da viewport para permitir a centralização vertical */
+}
+
+
+.childBox {
+    margin-right: 10px;
+    /* Adicione algum espaço entre os itens, se necessário */
+}

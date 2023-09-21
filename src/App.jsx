@@ -105,9 +105,6 @@ function App() {
               />} />
               <Route path="/applications" element={<AppsPage
                 auth={auth}
-                imageUrl="./assets/img/smarteplayer.jpg"
-                appName="Smarters Player"
-                appLink="https://link.do.seu.app"
               />
               } /> {/* Aqui está a nova rota que você adicionou */}
               <Route path="*" element={<Navigate to="/" />} />

@@ -49,21 +49,23 @@ function LoginForm({ onLogin, errorMessage }) {
           <span className={styles['highlight-span']}></span>
           <label className={`${styles['label-email']} ${email && styles['label-email-hidden']}`}>Email</label>
         </div>
-        <div className={styles['container-1']}>
-          <div className={styles.group}>
-            <input
-              required
-              className={styles['main-input']}
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-            <span className={styles['highlight-span']}></span>
-            <label className={`${styles['label-email']} ${password && styles['label-email-hidden']}`}>Senha</label>
-            <br />
-            <Link to="/reset" className={styles.resetLink}>Esqueceu sua senha?</Link>
-          </div>
+
+        <div className={styles.group}>
+          <input
+            required
+            className={styles['main-input']}
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+
+          <span className={styles['highlight-span']}></span>
+          <label className={`${styles['label-email']} ${password && styles['label-email-hidden']}`}>Senha</label>
         </div>
+        <br />
+        <Link to="/reset" className={styles.resetLink}>Esqueceu sua senha?</Link>
+
+
         <button className={styles.submit} type="submit"> <span>Entrar</span> </button>
         <Link to="/registro">Não tem uma conta? Registre-se!</Link>
       </form>
