@@ -10,12 +10,11 @@
     position: relative;
     display: block;
     transition: left 0.3s ease;
-    background-color: rgba(84, 84, 84, 0.698);
+    background-color: rgba(242, 242, 242, 0.698);
     /* Adicionado um fundo branco semi-transparente */
     border-radius: 0.5rem;
-    /* Adicionado para arredondar os cantos do fundo */
-    box-shadow: 5px 5px 10px rgb(255, 255, 255),
-        -5px -5px 15px rgb(255, 255, 255);
+    border: 3px solid rgba(156, 154, 154, 0.497);
+
 }
 
 
@@ -35,6 +34,7 @@
 }
 
 .buttons__burger span {
+    border: 10px solid var(--clr);
     display: block;
     position: absolute;
     width: 100%;
