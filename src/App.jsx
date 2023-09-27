@@ -17,6 +17,8 @@ import LoginForm from './Pages/LoginForm';
 import SignUpForm from './Pages/SignUpForm';
 import Home from './Pages/HomePage';
 import ResetPasswordForm from './Pages/ResetPasswordForm';
+import SsPage from './Pages/SsPage';
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -103,10 +105,8 @@ function App() {
                 fetchTestData={fetchTestData}
                 loadingTest={loadingTest}
               />} />
-              <Route path="/applications" element={<AppsPage
-                auth={auth}
-              />
-              } /> {/* Aqui está a nova rota que você adicionou */}
+              <Route path="/applications" element={<AppsPage auth={auth} />} />
+              <Route path="/ss" element={<SsPage auth={auth} />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           ) : (
@@ -114,6 +114,7 @@ function App() {
               <Route path="/login" element={<LoginForm onLogin={handleLogin} errorMessage={errorMessage} setErrorMessage={setErrorMessage} />} />
               <Route path="/registro" element={<SignUpForm onSignUp={handleSignUp} />} />
               <Route path="/reset" element={<ResetPasswordForm />} /> {/* Adicionando rota para o formulário de redefinição de senha */}
+
               <Route path="*" element={<Navigate to="/login" />} />
             </Routes>
           )}

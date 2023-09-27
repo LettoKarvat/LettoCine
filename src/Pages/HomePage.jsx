@@ -32,6 +32,9 @@ function Home({ auth, fetchTestData, loadingTest }) {
 
         <div id="container">
           <div className="loader">
+            <br />
+            <br />
+            <br />
             <h1 className="loader-text">{auth.user.fullname}</h1>
             <div className="loader-bar"></div>
           </div>
