@@ -134,12 +134,12 @@ p {
 
 @media (max-width: 600px) {
     img {
-        max-width: 90%;
+        max-width: 95%;
         /* Reduz para 60% do tamanho da imagem original */
     }
 
     .imge {
-        max-width: 40%;
+        max-width: 50%;
         /* Reduz para 60% do tamanho da imagem original */
     }
 }
