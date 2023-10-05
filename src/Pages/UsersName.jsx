@@ -278,7 +278,7 @@ const UsersName = ({ token, setTotalUsers, setLoadingUsers }) => {
                                         if (expiryDate.isBefore(now.clone().add(7, 'days'))) {
                                             return 'yellow'; // Amarelo se a data de vencimento é em até 7 dias
                                         }
-                                        return 'black'; // Preto para qualquer outro caso
+                                        return 'green'; // Preto para qualquer outro caso
                                     })(),
                                 }}>
                                     Vencimento: {user.vencimento}
