@@ -745,9 +745,6 @@ input::-webkit-inner-spin-button {
     /* 60% do valor original, supondo que era 20px antes */
   }
 
-  img {
-    max-width: 60%;
-    /* Reduz para 60% do tamanho da imagem original */
-  }
+
 
 }

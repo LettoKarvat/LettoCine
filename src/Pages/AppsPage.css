@@ -125,8 +125,21 @@ p {
         transform: translateX(0px);
         opacity: 1;
     }
+
 }
 
 .buttona:active {
     transform: scale(0.97);
+}
+
+@media (max-width: 600px) {
+    img {
+        max-width: 90%;
+        /* Reduz para 60% do tamanho da imagem original */
+    }
+
+    .imge {
+        max-width: 40%;
+        /* Reduz para 60% do tamanho da imagem original */
+    }
 }

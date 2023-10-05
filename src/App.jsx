@@ -18,7 +18,7 @@ import SignUpForm from './Pages/SignUpForm';
 import Home from './Pages/HomePage';
 import ResetPasswordForm from './Pages/ResetPasswordForm';
 import SsPage from './Pages/SsPage';
-
+import IPTVSmartersGuide from './Pages/SmartersPage'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -107,6 +107,7 @@ function App() {
               />} />
               <Route path="/applications" element={<AppsPage auth={auth} />} />
               <Route path="/ss" element={<SsPage auth={auth} />} />
+              <Route path='/smarters' element={<IPTVSmartersGuide auth={auth} />}></Route>
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           ) : (

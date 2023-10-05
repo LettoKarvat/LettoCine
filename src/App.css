@@ -88,3 +88,39 @@ a {
 a:hover {
   color: rgb(0, 89, 255);
 }
+
+.instruction-container {
+  margin: 20px;
+}
+
+.instruction-step {
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.231);
+  /* Adiciona um fundo branco semi-transparente */
+}
+
+.instruction-step ol {
+  margin-top: 10px;
+  padding-left: 40px;
+  /* Ajusta o padding para centralizar a lista */
+  text-align: left;
+  /* Alinha o texto à esquerda dentro da lista */
+}
+
+.instruction-step li {
+  margin-bottom: 10px;
+  /* Adiciona uma margem inferior para melhorar a legibilidade */
+}
+
+
+.instruction-step h2 {
+  margin-bottom: 10px;
+}
+
+.instruction-step p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
