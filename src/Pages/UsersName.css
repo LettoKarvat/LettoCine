@@ -748,3 +748,10 @@ input::-webkit-inner-spin-button {
 
 
 }
+
+@media (max-width: 600px) {
+  .imge {
+    max-width: 75%;
+    /* Reduz para 60% do tamanho da imagem original */
+  }
+}

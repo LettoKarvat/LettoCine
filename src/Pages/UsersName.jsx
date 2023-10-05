@@ -443,7 +443,7 @@ const UsersName = ({ token, setTotalUsers, setLoadingUsers }) => {
                     {qrData && (
                         <div>
                             <h2 className="custom-h2">Seu QR Code:</h2>
-                            <img src={qrData.qrCodeImage} alt="QR Code" />
+                            <img className='imge' src={qrData.qrCodeImage} alt="QR Code" />
                             <h2 className="custom-h2">Clique para copiar o código copia e cola:</h2>
                             <div className="btn-container">
                                 <button className={`Btn ${copied ? 'flash' : ''}`} onClick={() => copyToClipboard(qrData.copiaecola)}>
