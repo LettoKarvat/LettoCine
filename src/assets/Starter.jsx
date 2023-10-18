@@ -31,21 +31,19 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
 
     const handleOkClick = async (user, plano) => {
         setIsProcessing(true);
-        // Limpa o qrData ao clicar
         setOutro('Processando')
 
-        console.log(user)
+        console.log(user);
         try {
-            await handleRenew(user, plano);
-            console.log('este', qrData)
-            setOutro(qrData)
+            const result = await handleRenew(user, plano); // Passando setOutro como argumento
+            setOutro(result)
         } catch (error) {
             console.error("Ocorreu um erro ao renovar:", error);
         } finally {
             setIsProcessing(false); // garante que 'isProcessing' seja definido como false após a conclusão.
         }
-
     };
+
 
     const copyToClipboard = (text) => {
         navigator.clipboard.writeText(text)
