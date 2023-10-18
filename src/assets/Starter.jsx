@@ -37,7 +37,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
         console.log(user)
         try {
             await handleRenew(user, plano);
-            console.log(qrData)
+            console.log('este', qrData)
             setOutro(qrData)
         } catch (error) {
             console.error("Ocorreu um erro ao renovar:", error);
