@@ -1,6 +1,5 @@
 .buttons__burger {
-    position: absolute;
-
+    position: fixed;
     left: -10px;
     --size: 3rem;
     --clr: #020202;
