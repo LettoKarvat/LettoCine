@@ -76,10 +76,10 @@ function SsPage({ auth }) {
                             <br />
                             <img src="https://i.imgur.com/wmlirGV.png" alt="Imagem de Instalação do Aplicativo" width="700" />
                         </li>
-                        <li>Adicione um nome exemplo "LettoCine" e insira o link SSIPTV do seu usuário no campo "Source".
+                        <li>Adicione um nome, exemplo "LettoCine" e no campo "Source", insira o link SSIPTV do seu usuário.
                             <br />
                             <br />
-                            <img className="imge" src="https://i.imgur.com/IqfuDUf.png" alt="Imagem de Instalação do Aplicativo" width="300" style={{ marginRight: '20px' }} />
+                            <img className="imge" src="https://i.imgur.com/S7gKViN.png" alt="Imagem de Instalação do Aplicativo" width="300" style={{ marginRight: '20px' }} />
                             <img className="imge" src="https://i.imgur.com/oBY722Q.png" alt="Imagem de Instalação do Aplicativo" width="400" />
 
 

@@ -1,7 +1,23 @@
 import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 
-const addItemToCart = async (monthsToRenew, auth) => {
+const addItemToCart = async (monthsToRenew, auth, plano) => {
+  let productId;
+
+  if (plano === 1) {
+    productId = "3EG0nJtdT7";
+    monthsToRenew = 1;
+  } else if (plano === 2) {
+    productId = "axbtDsVHQc";
+    monthsToRenew = 1;
+  } else if (plano === 3) {
+    productId = "a0HmwQzhwP";
+    monthsToRenew = 1;
+  } else {
+    // Defina um valor padrão ou lide com outros casos, se necessário
+    throw new Error(`Plano inválido: ${plano}`);
+  }
+  console.log(monthsToRenew, productId)
   const response = await fetch(import.meta.env.VITE_CART, {
     method: "POST",
     headers: {
@@ -11,7 +27,7 @@ const addItemToCart = async (monthsToRenew, auth) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      productId: "3EG0nJtdT7",
+      productId: productId,
       quantity: monthsToRenew
     })
   });
@@ -24,7 +40,21 @@ const addItemToCart = async (monthsToRenew, auth) => {
   return data.result.id;
 };
 
-const performCheckout = async (tudo, auth, userRenew) => {
+
+const performCheckout = async (monthsToRenew, auth, userRenew, plano) => {
+  let tudo;
+
+  if (plano === 1) {
+    tudo = 35;
+  } else if (plano === 2) {
+    tudo = 85;
+  } else if (plano === 3) {
+    tudo = 150;
+  } else {
+    // Lide com outros valores de plano ou lance um erro, se necessário
+    throw new Error(`Plano inválido: ${plano}`);
+  }
+  console.log(tudo)
   const response = await fetch(import.meta.env.VITE_CHECKOUT, {
     method: "POST",
     headers: {
@@ -47,23 +77,24 @@ const performCheckout = async (tudo, auth, userRenew) => {
   return dataQr.result;
 };
 
+
 export const useRenewUser = () => {
   const { auth } = useAuth();
   const [monthsToRenew, setMonthsToRenew] = useState(1);
-  const [qrData, setQrData] =useState(null)
+  const [qrData, setQrData] = useState(null)
 
 
-  const handleRenew = async (userRenew) => {
+  const handleRenew = async (userRenew, plano) => {
     try {
-      const itemId = await addItemToCart(monthsToRenew, auth);
+      const itemId = await addItemToCart(monthsToRenew, auth, plano);
 
-      const tudo = monthsToRenew * 30;
-      
-      const result = await performCheckout(tudo, auth, userRenew);
-      
+
+
+      const result = await performCheckout(monthsToRenew, auth, userRenew, plano);
+      console.log(result)
       setQrData(result)
 
-      
+
 
     } catch (error) {
       console.error("Erro ao renovar usuário:", error);

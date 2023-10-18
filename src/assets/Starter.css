@@ -1,0 +1,192 @@
+.pack-container {
+
+    display: flex;
+    align-self: start;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: #212121;
+    border: 1px solid #fff;
+    padding: 1.2rem;
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    margin-left: 15px;
+
+}
+
+
+.header {
+    position: relative;
+    margin: 0;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+
+.price-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    font-family: sans-serif;
+    font-size: 2.0rem;
+    line-height: 1;
+}
+
+.price-container span:first-child {
+    margin-top: 10px;
+    font-size: 1.25rem;
+
+}
+
+.price-container span:last-child {
+    align-self: flex-end;
+    font-size: 1.25rem;
+
+}
+
+.lists {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list span {
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background-color: rgba(255, 255, 255, 0.185);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list span svg {
+    height: 12px;
+    width: 12px;
+}
+
+.list p {
+    display: block;
+    font-family: sans-serif;
+}
+
+.button-container {
+    margin-top: 20px;
+    padding: 0;
+}
+
+.button-container button {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: #000;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+}
+
+.button-container button:hover {
+    background-color: #e5e5e5;
+}
+
+.button-container button:active {
+    background-color: #d0d0d0;
+    transform: scale(0.97);
+    transition: transform 0.1s;
+}
+
+.button-container button[disabled] {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+
+/* ... (existing styles you provided) ... */
+
+/* ... (existing styles you provided) ... */
+
+@media (max-width: 600px) {
+    .pack-container {
+        padding: 0.72rem;
+        /* 40% of 1.2rem */
+        margin-left: 9px;
+        /* 40% of 15px */
+    }
+
+    .header {
+        margin-bottom: 1.2rem;
+        /* 40% of 2rem */
+        padding-bottom: 0.6rem;
+        /* 40% of 1rem */
+    }
+
+    .price-container {
+        font-size: 1.2rem;
+        /* 40% of 2.0rem */
+        margin-top: 6px;
+        /* 40% of 10px */
+    }
+
+    .price-container span:first-child {
+        margin-top: 6px;
+        /* 40% of 10px */
+        font-size: 0.75rem;
+        /* 40% of 1.25rem */
+    }
+
+    .price-container span:last-child {
+        font-size: 0.75rem;
+        /* 40% of 1.25rem */
+    }
+
+    .lists {
+        gap: 4.8px;
+        /* 40% of 8px */
+    }
+
+    .list {
+        gap: 6px;
+        /* 40% of 10px */
+    }
+
+    .list span {
+        height: 18px;
+        /* 40% of 30px */
+        width: 18px;
+        /* 40% of 30px */
+    }
+
+    .list span svg {
+        height: 7.2px;
+        /* 40% of 12px */
+        width: 7.2px;
+        /* 40% of 12px */
+    }
+
+    .button-container {
+        margin-top: 12px;
+        /* 40% of 20px */
+    }
+
+    .button-container button {
+        padding: 6px 12px;
+        /* 40% of (10px 20px) */
+    }
+}
