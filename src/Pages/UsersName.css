@@ -216,10 +216,9 @@
   border-radius: 12px;
   /* Adicionado do pack-container */
   color: #fff;
-  overflow-y: auto;
+  overflow-x: auto;
   /* Permitirá rolagem vertical se necessário */
-  max-height: 100vh;
-  /* O contêiner não excederá a altura da janela/viewport */
+
 
 }
 
