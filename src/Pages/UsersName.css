@@ -216,6 +216,10 @@
   border-radius: 12px;
   /* Adicionado do pack-container */
   color: #fff;
+  overflow-y: auto;
+  /* Permitirá rolagem vertical se necessário */
+  max-height: 100vh;
+  /* O contêiner não excederá a altura da janela/viewport */
 
 }
 
@@ -467,8 +471,7 @@
 
   .svgIcon {
     width: 35%;
-    /* Não é necessário ajustar o tamanho do ícone SVG aqui se for um ícone SVG escalável. 
-         Ele se ajustará automaticamente com base no tamanho do container. */
+
   }
 
 
@@ -493,21 +496,9 @@
     height: 18px;
   }
 
-  .price-container {
-    font-size: 0.6rem;
-    /* 60% do valor original, supondo que era 1rem antes */
-    gap: 2.4px;
-    /* 60% do valor original, supondo que era 4px antes */
-  }
 
-  .custom-h2 {
-    font-size: 1.2rem;
-    /* 60% do valor original, supondo que era 2rem antes */
-    margin-top: 12px;
-    /* 60% do valor original, supondo que era 20px antes */
-    margin-bottom: 12px;
-    /* 60% do valor original, supondo que era 20px antes */
-  }
+
+
 
 
 

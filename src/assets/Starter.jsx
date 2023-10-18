@@ -54,18 +54,18 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
     };
 
     return (
-        <div class="pack-container">
-            <div class="header">
+        <div className="pack-container">
+            <div className="header">
 
-                <div class="price-container">
+                <div className="price-container">
                     <span>R$</span>{Valor}
                     <span>/{Meses}</span>
                 </div>
 
             </div>
-            <ul class="lists">
+            <ul className="lists">
 
-                <li class="list">
+                <li className="list">
                     <span>
                         <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
@@ -78,7 +78,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
             </ul>
 
             <br />
-            <div class="button-container">
+            <div className="button-container">
                 <button type="button" onClick={() => handleOkClick(userRenew, plano)} disabled={isProcessing || outro === 'Processando'}>
                     Renovar
                 </button>
@@ -87,7 +87,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
             {qrData && String(outro?.total) === Valor && (
                 <div>
                     <div>
-                        <h2 className="custom-h2">Seu QR Code:</h2>
+                        <h3>Seu QR Code:</h3>
                         <img className='imge' src={qrData.qrCodeImage} alt="QR Code" />
 
                         <div className="btn-container">

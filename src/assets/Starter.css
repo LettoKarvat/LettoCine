@@ -116,11 +116,21 @@
     cursor: not-allowed;
 }
 
+h3 {
+    font-family: 'Arial', sans-serif;
+    /* Fonte simples */
+    font-size: 16px;
+    /* Tamanho moderado */
+    font-weight: normal;
+    /* Sem negrito */
+    color: #cecece;
+    /* Cor de texto suave */
+    margin: 10px 0;
+    /* Espaçamento equilibrado */
+}
 
 
-/* ... (existing styles you provided) ... */
 
-/* ... (existing styles you provided) ... */
 
 @media (max-width: 600px) {
     .pack-container {
@@ -188,5 +198,14 @@
     .button-container button {
         padding: 6px 12px;
         /* 40% of (10px 20px) */
+    }
+
+    .custom-h3 {
+        font-size: 1.0rem;
+        /* 60% do valor original, supondo que era 2rem antes */
+        margin-top: 12px;
+        /* 60% do valor original, supondo que era 20px antes */
+        margin-bottom: 12px;
+        /* 60% do valor original, supondo que era 20px antes */
     }
 }
