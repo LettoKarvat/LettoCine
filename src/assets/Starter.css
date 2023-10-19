@@ -99,6 +99,7 @@
     outline: 0;
     border: 0;
     border-radius: 10px;
+
 }
 
 .button-container button:hover {
@@ -148,7 +149,7 @@ h3 {
     }
 
     .price-container {
-        font-size: 1.2rem;
+        font-size: 1.0rem;
         /* 40% of 2.0rem */
         margin-top: 6px;
         /* 40% of 10px */
@@ -157,17 +158,17 @@ h3 {
     .price-container span:first-child {
         margin-top: 6px;
         /* 40% of 10px */
-        font-size: 0.75rem;
+        font-size: 1rem;
         /* 40% of 1.25rem */
     }
 
     .price-container span:last-child {
-        font-size: 0.75rem;
+        font-size: 1rem;
         /* 40% of 1.25rem */
     }
 
     .lists {
-        gap: 4.8px;
+        gap: 4.0px;
         /* 40% of 8px */
     }
 
@@ -177,16 +178,16 @@ h3 {
     }
 
     .list span {
-        height: 18px;
+        height: 14px;
         /* 40% of 30px */
-        width: 18px;
+        width: 14px;
         /* 40% of 30px */
     }
 
     .list span svg {
-        height: 7.2px;
+        height: 6.2px;
         /* 40% of 12px */
-        width: 7.2px;
+        width: 6.2px;
         /* 40% of 12px */
     }
 
@@ -196,16 +197,26 @@ h3 {
     }
 
     .button-container button {
+        font-size: 0.8rem;
         padding: 6px 12px;
         /* 40% of (10px 20px) */
     }
 
-    .custom-h3 {
-        font-size: 1.0rem;
+    h3 {
+        font-size: 0.7rem;
         /* 60% do valor original, supondo que era 2rem antes */
-        margin-top: 12px;
+        margin-top: 10px;
         /* 60% do valor original, supondo que era 20px antes */
-        margin-bottom: 12px;
+        margin-bottom: 2px;
         /* 60% do valor original, supondo que era 20px antes */
+    }
+
+    p {
+        font-size: 0.7rem;
+    }
+
+    img {
+        height: 90px;
+        width: 90px;
     }
 }

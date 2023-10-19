@@ -40,7 +40,11 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
         } catch (error) {
             console.error("Ocorreu um erro ao renovar:", error);
         } finally {
-            setIsProcessing(false); // garante que 'isProcessing' seja definido como false após a conclusão.
+
+            setIsProcessing(false);
+
+
+            ; // garante que 'isProcessing' seja definido como false após a conclusão.
         }
     };
 
@@ -88,7 +92,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
                 <div>
                     <div>
                         <h3>Seu QR Code:</h3>
-                        <img className='imge' src={qrData.qrCodeImage} alt="QR Code" />
+                        <img src={qrData.qrCodeImage} alt="QR Code" />
 
                         <div className="btn-container">
                             <button className={`Btn ${copied ? 'flash' : ''}`} onClick={() => copyToClipboard(qrData.copiaecola)}>

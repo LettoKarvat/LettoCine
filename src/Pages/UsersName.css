@@ -200,12 +200,12 @@
 
 .renewalBox {
   width: 60%;
+  overflow: hidden;
   padding: 20px;
   background-color: rgba(93, 92, 93, 0.8);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  position: absolute;
-  bottom: 20%;
-  /* isso faz com que a caixa seja posicionada a 20% da parte inferior da tela */
+  /* Adicionado do pack-container */
+  position: fixed;
   flex-direction: column;
   visibility: hidden;
   align-items: center;
@@ -214,10 +214,13 @@
   opacity: 0;
   pointer-events: none;
   border-radius: 12px;
+  /* Adicionado do pack-container */
   color: #fff;
+  overflow-y: auto;
+
+
 
 }
-
 
 
 
@@ -230,20 +233,8 @@
   text-align: center;
   justify-content: center;
 
-}
-
-.flex-Item {
-  display: flex;
-  align-items: start;
-  text-align: center;
-  justify-content: center;
-  flex-grow: 1;
-  flex-basis: 100px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  /* Adicione margem à direita de cada item (ajuste conforme necessário) */
+  /* Adicione esta linha */
+  /* Modificado de 'left' para 'center' para manter a estilização do pack-container */
 }
 
 /* Define a animação slideDown */
@@ -272,6 +263,20 @@
     opacity: 0;
     transform: translateY(-50%);
   }
+}
+
+.flex-Item {
+  display: flex;
+  align-items: start;
+  text-align: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex-basis: 100px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  /* Adicione margem à direita de cada item (ajuste conforme necessário) */
 }
 
 /* Para esconder as flechas no Firefox */
@@ -470,8 +475,6 @@
 
   }
 
-
-
   .carde__counter {
     gap: 5px;
     /* 40% menos de 15px */
@@ -484,20 +487,13 @@
   .carde__counter-score,
   .carde__btn {
     font-size: 13.2px;
-    /* 40% menor que 22px */
+
   }
 
   .carde__btn {
     width: 18px;
     height: 18px;
   }
-
-
-
-
-
-
-
 }
 
 @media (max-width: 600px) {
