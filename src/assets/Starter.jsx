@@ -92,7 +92,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
                 <div>
                     <div>
                         <h3 className='customh3'>Seu QR Code:</h3>
-                        <img src={qrData.qrCodeImage} alt="QR Code" />
+                        <img className="imgee" src={qrData.qrCodeImage} alt="QR Code" />
 
                         <div className="btn-container">
                             <button className={`Btn ${copied ? 'flash' : ''}`} onClick={() => copyToClipboard(qrData.copiaecola)}>
