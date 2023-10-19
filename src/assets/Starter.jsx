@@ -81,7 +81,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
                 </li>
             </ul>
 
-            <br />
+
             <div className="button-container">
                 <button type="button" onClick={() => handleOkClick(userRenew, plano)} disabled={isProcessing || outro === 'Processando'}>
                     Renovar
