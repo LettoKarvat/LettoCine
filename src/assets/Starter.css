@@ -193,6 +193,7 @@ h3 {
 
 
     .button-container button {
+        padding: 0px 0px;
         font-size: 0.5rem;
         margin-top: 4px;
         padding-top: 5px;
