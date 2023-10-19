@@ -216,7 +216,7 @@
   border-radius: 12px;
   /* Adicionado do pack-container */
   color: #fff;
-  overflow-x: auto;
+
   /* Permitirá rolagem vertical se necessário */
 
 
@@ -258,7 +258,7 @@
   display: flex;
   text-align: center;
   justify-content: center;
-
+  overflow-x: auto;
   /* Adicione esta linha */
   /* Modificado de 'left' para 'center' para manter a estilização do pack-container */
 }
