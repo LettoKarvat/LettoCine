@@ -203,7 +203,7 @@
   padding: 20px;
   background-color: rgba(93, 92, 93, 0.8);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  position: fixed;
+  position: absolute;
   bottom: 20%;
   /* isso faz com que a caixa seja posicionada a 20% da parte inferior da tela */
   flex-direction: column;
@@ -215,7 +215,7 @@
   pointer-events: none;
   border-radius: 12px;
   color: #fff;
-  overflow-y: auto;
+
 }
 
 

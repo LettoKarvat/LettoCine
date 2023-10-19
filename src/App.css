@@ -43,11 +43,9 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-
-  /* Alterado de center para flex-start para alinhar o conteúdo no topo */
+  position: relative;
   align-items: center;
   min-height: 100%;
-  /* Alterado de 100vh para 100% */
   margin: 0 auto;
   text-align: center;
   font-family: Arial, sans-serif;
