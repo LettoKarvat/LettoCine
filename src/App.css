@@ -43,7 +43,7 @@ body {
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+
   /* Alterado de center para flex-start para alinhar o conteúdo no topo */
   align-items: center;
   min-height: 100%;

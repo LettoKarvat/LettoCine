@@ -199,7 +199,8 @@
 
 
 .renewalBox {
-  width: 40%;
+  width: 60%;
+  padding: 20px;
   background-color: rgba(93, 92, 93, 0.8);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   /* Adicionado do pack-container */
@@ -215,8 +216,6 @@
   color: #fff;
   /* 80% da altura da viewport */
   overflow-y: auto;
-
-
 }
 
 
@@ -226,6 +225,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  display: flex;
   text-align: center;
   justify-content: center;
 
