@@ -75,7 +75,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
                             <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
                         </svg>
                     </span>
-                    <p>
+                    <p className='customp'>
                         {Descricao}
                     </p>
                 </li>
@@ -91,7 +91,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
             {qrData && String(outro?.total) === Valor && (
                 <div>
                     <div>
-                        <h3>Seu QR Code:</h3>
+                        <h3 className='customh3'>Seu QR Code:</h3>
                         <img src={qrData.qrCodeImage} alt="QR Code" />
 
                         <div className="btn-container">

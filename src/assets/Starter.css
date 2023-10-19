@@ -116,7 +116,7 @@
     cursor: not-allowed;
 }
 
-h3 {
+.customh3 {
     font-family: 'Arial', sans-serif;
     /* Fonte simples */
     font-size: 16px;
@@ -206,7 +206,7 @@ h3 {
         height: 100%;
     }
 
-    h3 {
+    .customh3 {
         font-size: 0.7rem;
         /* 60% do valor original, supondo que era 2rem antes */
         margin-top: 10px;
@@ -215,7 +215,7 @@ h3 {
         /* 60% do valor original, supondo que era 20px antes */
     }
 
-    p {
+    .customp {
         font-size: 0.7rem;
     }
 
