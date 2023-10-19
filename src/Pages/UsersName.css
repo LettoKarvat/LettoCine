@@ -200,7 +200,7 @@
 
 .renewalBox {
   width: 60%;
-  overflow: hidden;
+
   padding: 20px;
   background-color: rgba(93, 92, 93, 0.8);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -214,12 +214,37 @@
   opacity: 0;
   pointer-events: none;
   border-radius: 12px;
-  /* Adicionado do pack-container */
   color: #fff;
+  max-height: 80vh;
+  /* 80% da altura da viewport */
+  overflow-y: auto;
+}
 
-  /* Permitirá rolagem vertical se necessário */
 
 
+/* Classe para tornar a caixa de renovação visível */
+.renewalBox-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.flex-Item {
+  display: flex;
+  align-items: start;
+  text-align: center;
+  justify-content: center;
+  flex-grow: 1;
+  flex-basis: 100px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  /* Adicione margem à direita de cada item (ajuste conforme necessário) */
 }
 
 /* Define a animação slideDown */
@@ -248,33 +273,6 @@
     opacity: 0;
     transform: translateY(-50%);
   }
-}
-
-/* Classe para tornar a caixa de renovação visível */
-.renewalBox-visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  overflow-x: auto;
-  /* Adicione esta linha */
-  /* Modificado de 'left' para 'center' para manter a estilização do pack-container */
-}
-
-.flex-Item {
-  display: flex;
-  align-items: start;
-  text-align: center;
-  justify-content: center;
-  flex-grow: 1;
-  flex-basis: 100px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-
-  /* Adicione margem à direita de cada item (ajuste conforme necessário) */
 }
 
 /* Para esconder as flechas no Firefox */
