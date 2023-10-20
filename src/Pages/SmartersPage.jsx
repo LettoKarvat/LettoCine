@@ -34,7 +34,15 @@ function IPTVSmartersGuide({ auth }) {
 
 
 
-                    <p>Você precisará inserir suas credenciais de login fornecidas pelo seu provedor de IPTV.</p>
+                    <p>Copie suas credenciais (imagem 1) e cole nos campos indicados (imagem 2).</p>
+                    Imagem 1:
+                    <br />
+                    <img src="https://i.imgur.com/EkqF4Zj.png" alt="Imagem de Instalação do Aplicativo" width="250" />
+                    <br />
+                    Imagem 2:
+                    <br />
+                    <img src="https://i.imgur.com/5PlbOtu.png" alt="Imagem de Instalação do Aplicativo" width="300" />
+
                 </div>
                 <div className="instruction-step">
                     <h2>Passo 4: Comece a assistir</h2>
