@@ -38,6 +38,7 @@
 }
 
 .card button {
+  margin-top: -30px;
   position: relative;
   padding: 8px 20px;
   border-radius: 7px;
@@ -134,7 +135,7 @@
 }
 
 .card li:nth-of-type(4) {
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 
