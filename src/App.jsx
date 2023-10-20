@@ -19,6 +19,10 @@ import Home from './Pages/HomePage';
 import ResetPasswordForm from './Pages/ResetPasswordForm';
 import SsPage from './Pages/SsPage';
 import IPTVSmartersGuide from './Pages/SmartersPage'
+import Xcplayer from './Pages/Xcplayer';
+import ClouDDyPlayer from './Pages/Clouddy';
+import SmartTVClub from './Pages/Smartclub';
+import WebPlayer from './Pages/Webplayer';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -108,6 +112,10 @@ function App() {
               <Route path="/applications" element={<AppsPage auth={auth} />} />
               <Route path="/ss" element={<SsPage auth={auth} />} />
               <Route path='/smarters' element={<IPTVSmartersGuide auth={auth} />}></Route>
+              <Route path='/xcplayer' element={<Xcplayer auth={auth} />}></Route>
+              <Route path='/clouddy' element={<ClouDDyPlayer auth={auth} />}></Route>
+              <Route path='/WebTv' element={<WebPlayer auth={auth} />}></Route>
+              <Route path='/smartclub' element={<SmartTVClub auth={auth} />}></Route>
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           ) : (
