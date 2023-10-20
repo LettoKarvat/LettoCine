@@ -19,12 +19,15 @@ function IPTVSmartersGuide({ auth }) {
 
 
                     <p>Você pode baixar o IPTV Smarters da loja de aplicativos do seu dispositivo.</p>
+                    <img src="https://i.imgur.com/A6qwc90.png" alt="Imagem de Instalação do Aplicativo" width="100" />
                 </div>
 
                 <div className="instruction-step">
                     <h2>Passo 2: Abra o aplicativo</h2>
 
+
                     <p>Depois de instalar, abra o aplicativo IPTV Smarters em seu dispositivo.</p>
+                    <img src="https://i.imgur.com/jYMKlT9.png" alt="Imagem de Instalação do Aplicativo" width="300" />
                 </div>
                 <div className="instruction-step">
                     <h2>Passo 3: Insira suas credenciais</h2>

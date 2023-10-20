@@ -125,14 +125,15 @@
 
 
 .card li:nth-of-type(1),
-.card li:nth-of-type(2) {
+.card li:nth-of-type(2),
+.card li:nth-of-type(3) {
   color: #FFD54F;
   /* Cor da terceira e quarta linha */
   font-size: 0.9em;
   /* Reduz o tamanho da fonte em 10% em relação ao tamanho atual */
 }
 
-.card li:nth-of-type(3) {
+.card li:nth-of-type(4) {
   margin-top: 5px;
 }
 

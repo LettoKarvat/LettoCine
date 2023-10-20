@@ -154,6 +154,13 @@ const UsersName = ({ token, setTotalUsers, setLoadingUsers }) => {
                                     <Copy altura1={'15'} altura2={'15'} />
                                 </div>
                             </li>
+                            <li className='user-info-container'><p className='user-name'> <a href='http://dns.cdnctv.com.br:80'>URL DNS</a></p>
+                                <div className="copy" role='button' tabIndex="0" onClick={() => copyToClipboard('http://dns.cdnctv.com.br:80')}>
+                                    <Copy altura1={'15'} altura2={'15'} />
+                                </div>
+                            </li>
+
+
 
                             <li>
                                 <p style={{
