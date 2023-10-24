@@ -226,3 +226,26 @@
 .button2:active span {
     transform: translateX(3px);
 }
+
+
+.whatsapp-support-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.whatsapp-support-button:hover {
+    background-color: #128C57;
+}
+
+.whatsapp-support-button svg {
+    margin-right: 10px;
+    font-size: 1.5em;
+}

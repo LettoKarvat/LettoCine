@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Menu.css'
 import '../Loading.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 function Menu({ isMenuVisible, setIsMenuVisible, auth }) {
     return (
@@ -38,9 +40,22 @@ function Menu({ isMenuVisible, setIsMenuVisible, auth }) {
                                     </svg>
                                     <span>Usuários</span>
                                 </button>
+
+
+                                <a href="https://api.whatsapp.com/send?phone=5547996601626&text=Ol%C3%A1,%20gostaria%20de%20conhecer%20as%20vantagens%20de%20ser%20um%20revendedor%20LettoCine!%20" className="whatsapp-support-button">
+                                    <FontAwesomeIcon icon={faWhatsapp} />
+                                    Seja um <br />
+                                    revendedor!
+                                </a>
+                                <br />
+                                <a href="https://wa.me/47996601626" className="whatsapp-support-button">
+                                    <FontAwesomeIcon icon={faWhatsapp} />
+                                    Suporte!
+                                </a>
                             </Link>
 
                         </li>
+
                         <button data-label="Register" className="rainbow-hover" onClick={auth.logout}>
                             <span className="sp">S a i r</span>
                         </button>
