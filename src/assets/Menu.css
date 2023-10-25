@@ -98,7 +98,7 @@
 .menu ul {
     list-style-type: none;
     margin-top: 50px;
-    margin-bottom: 20em;
+    margin-bottom: 15em;
 
     /* Adicione uma margem em torno do ul */
 }
@@ -126,7 +126,7 @@
     transform: scale(var(--s, 1)) perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
     perspective: 600px;
     transition: transform 0.1s;
-    bottom: -290px;
+    bottom: -230px;
 }
 
 .sp {
