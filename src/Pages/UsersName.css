@@ -14,12 +14,10 @@
 /* Estiliza a caixa de cada usuário */
 .card {
   width: 220px;
-  height: 304px;
+  height: 330px;
   border-radius: 30px;
   background: #212121;
   color: white;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25),
-    -15px -15px 30px rgb(60, 60, 60);
   padding: 35px;
 }
 

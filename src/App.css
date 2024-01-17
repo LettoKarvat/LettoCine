@@ -11,31 +11,16 @@ body {
   margin: 0;
 }
 
-body {
-  background: linear-gradient(to bottom, #97979bcc, #000000);
-  background-size: cover;
-  background-attachment: fixed;
-  /* Isso ajudará a manter o background fixo enquanto o conteúdo rola */
-  backdrop-filter: brightness(60%);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
+
 
 /* O resto do seu CSS permanece o mesmo */
 html {
   height: 100%;
-  background: linear-gradient(to bottom, #97979bcc, #000000);
   background-size: cover;
   background-attachment: fixed;
 }
 
-body {
-  min-height: 100%;
-  margin: 0;
-  background-color: transparent;
-  /* Define o fundo do body como transparente para que o gradiente do html possa ser visto */
-  backdrop-filter: brightness(60%);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
+
 
 /* O resto do seu CSS permanece o mesmo */
 

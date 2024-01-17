@@ -35,6 +35,9 @@ function Home({ auth, fetchTestData, loadingTest }) {
             <br />
             <br />
             <br />
+            <img src='..\assets\img\logo4.jpeg' alt='logo' width="250" />
+            <br />
+            <br />
             <h1 className="loader-text">{auth.user.fullname}</h1>
             <div className="loader-bar"></div>
           </div>
