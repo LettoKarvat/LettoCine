@@ -144,3 +144,45 @@ body .menu nav>a:hover {
     line-height: 1.66;
     opacity: 0.6;
 }
+
+/* Estilo para telas com largura máxima de 768px */
+@media (max-width: 768px) {
+    .menu a {
+        font-size: 30px;
+        /* Tamanho da fonte menor para telas pequenas */
+    }
+}
+
+/* Estilo para telas com largura máxima de 480px */
+@media (max-width: 480px) {
+    .menu a {
+        font-size: 28px;
+        /* Tamanho da fonte ainda menor para telas de celulares */
+    }
+}
+
+/* Remover efeito de opacidade em dispositivos móveis */
+@media (max-width: 768px) {
+    .menu a {
+        /* Tamanho da fonte menor para telas pequenas */
+        font-size: 30px;
+    }
+
+    body .menu nav>a {
+        /* As letras não ficarão mais apagadas por padrão */
+        opacity: 1;
+    }
+
+    body .menu nav:hover>a,
+    body .menu nav>a:hover {
+        /* Remover efeito de hover para dispositivos móveis */
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu a {
+        /* Tamanho da fonte ainda menor para telas de celulares */
+        font-size: 28px;
+    }
+}
