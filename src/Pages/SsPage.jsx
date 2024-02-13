@@ -10,7 +10,7 @@ function SsPage({ auth }) {
     return (
         <div className='app'>
             <Menu isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible} auth={auth} />
-            <h1>Configuração do SS IPTV</h1>
+            <h1 >Configuração do SS IPTV</h1>
 
             <div className="instruction-container">
 

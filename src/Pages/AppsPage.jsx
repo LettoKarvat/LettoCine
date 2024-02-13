@@ -113,8 +113,16 @@ const AppsPage = ({ auth }) => {
                             </button>
                         </Link>
                     </div>
+
                 </div>
+
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
         </div>
     )
 }

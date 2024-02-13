@@ -41,7 +41,7 @@ const addItemToCart = async (monthsToRenew, auth, plano) => {
 };
 
 
-const performCheckout = async (monthsToRenew, auth, userRenew, plano) => {
+const performCheckout = async (monthsToRenew, auth, userRenew, plano, coupon) => {
   let tudo;
 
   if (plano === 1) {
@@ -54,7 +54,7 @@ const performCheckout = async (monthsToRenew, auth, userRenew, plano) => {
     // Lide com outros valores de plano ou lance um erro, se necessário
     throw new Error(`Plano inválido: ${plano}`);
   }
-  console.log(tudo)
+  console.log(coupon)
   const response = await fetch(import.meta.env.VITE_CHECKOUT, {
     method: "POST",
     headers: {
@@ -65,6 +65,7 @@ const performCheckout = async (monthsToRenew, auth, userRenew, plano) => {
     },
     body: JSON.stringify({
       total: tudo,
+      coupon: coupon,
       name: userRenew
     })
   });
@@ -84,15 +85,17 @@ export const useRenewUser = () => {
   const [qrData, setQrData] = useState(null)
 
 
-  const handleRenew = async (userRenew, plano) => {
+  const handleRenew = async (userRenew, plano, coupon) => {
     try {
       const itemId = await addItemToCart(monthsToRenew, auth, plano);
-
-
-
-      const result = await performCheckout(monthsToRenew, auth, userRenew, plano);
+      console.log('aqui tbm', coupon)
+      if (!coupon) {
+        coupon = "without";
+      }
+      const result = await performCheckout(monthsToRenew, auth, userRenew, plano, coupon);
       console.log(result)
       setQrData(result)
+      console.log('denovo', coupon)
       return result
 
 

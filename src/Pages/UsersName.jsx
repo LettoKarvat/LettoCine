@@ -154,8 +154,8 @@ const UsersName = ({ token, setTotalUsers, setLoadingUsers }) => {
                                     <Copy altura1={'15'} altura2={'15'} />
                                 </div>
                             </li>
-                            <li className='user-info-container'><p className='user-name'> <a href='http://dns.cdnctv.com.br:80'>URL DNS</a></p>
-                                <div className="copy" role='button' tabIndex="0" onClick={() => copyToClipboard('http://dns.cdnctv.com.br:80')}>
+                            <li className='user-info-container'><p className='user-name'> <a href='http://dns.acaidopara.net:8080'>URL DNS</a></p>
+                                <div className="copy" role='button' tabIndex="0" onClick={() => copyToClipboard('http://dns.acaidopara.net:8080')}>
                                     <Copy altura1={'15'} altura2={'15'} />
                                 </div>
                             </li>
@@ -195,9 +195,10 @@ const UsersName = ({ token, setTotalUsers, setLoadingUsers }) => {
                         <h2 className="title">Renovação</h2>
                     </div>
                     <div className='flex-Item'>
-                        <Starter Valor={"35"} Meses={"1 mês"} Descricao={"Maior custo"} plano={1} userRenew={userRenew} setOutro={setOutro} outro={outro} />
-                        <Starter Valor={"85"} Meses={"3 meses"} Descricao={"Popular"} plano={2} userRenew={userRenew} setOutro={setOutro} outro={outro} />
-                        <Starter Valor={"150"} Meses={"6 meses"} Descricao={"Menor custo"} plano={3} userRenew={userRenew} setOutro={setOutro} outro={outro} />
+                        <Starter Valor={"35"} Meses={"1 mês"} Descricao={"Menor custo"} plano={1} userRenew={userRenew} setOutro={setOutro} outro={outro} showCouponInput={true} />
+                        <Starter Valor={"85"} Meses={"3 meses"} Descricao={"Popular          "} plano={2} userRenew={userRenew} setOutro={setOutro} outro={outro} showCouponInput={false} />
+                        <Starter Valor={"150"} Meses={"6 meses"} Descricao={"Maior desconto"} plano={3} userRenew={userRenew} setOutro={setOutro} outro={outro} showCouponInput={false} />
+
                     </div>
 
 

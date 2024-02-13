@@ -2,41 +2,60 @@
 import './Starter.css'
 import './Copy.css'
 import { useRenewUser } from '../hooks/useRenewUser';
-
+import { useAuth } from '../hooks/useAuth';
 import { useState, useEffect } from 'react';
 import Loader from './Loader';
 
 
-const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro }) => {
+const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, showCouponInput }) => {
     const [isProcessing, setIsProcessing] = useState(false);
     const [copied, setCopied] = useState(false);
-    const {
-        monthsToRenew,
-        setMonthsToRenew,
-        qrData,
-        setQrData,
-        handleRenew
-    } = useRenewUser();
+    const [coupon, setCoupon] = useState(""); // Novo estado para o valor do cupom
+    const { qrData, handleRenew } = useRenewUser();
+    const [discont, setDiscont] = useState("")
+    const { auth } = useAuth();
 
 
     useEffect(() => {
         if (qrData === null) {
-            // Aqui, você pode colocar o código que você quer executar quando qrData for null.
-            // No entanto, pelo que vejo no seu código, parece que você está condicionalmente renderizando o QR Code com base no valor de qrData.
-            // Portanto, não há necessidade de fazer algo específico aqui. 
-            // A renderização condicional já cuida disso.
+
         }
     }, [qrData]);
 
+    const handleCouponChange = (e) => {
+        setCoupon(e.target.value);
+    };
 
     const handleOkClick = async (user, plano) => {
         setIsProcessing(true);
         setOutro('Processando')
-
+        setDiscont(0)
+        if (coupon) {
+            const response = await fetch(import.meta.env.VITE_CUPOM, {
+                method: "POST",
+                headers: {
+                    'X-Parse-Application-Id': import.meta.env.VITE_REACT_APP_PARSE_APP_ID,
+                    'X-Parse-REST-API-Key': import.meta.env.VITE_REACT_APP_PARSE_API_KEY,
+                    'X-Parse-Session-Token': auth.user.token,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    coupon: coupon
+                })
+            });
+            if (response.ok) {
+                const returnCupom = await response.json();
+                setDiscont(returnCupom.result)
+                Valor = Valor - discont;
+                console.log('oiiiiiiii', Valor)
+            }
+        }
         console.log(user);
         try {
-            const result = await handleRenew(user, plano); // Passando setOutro como argumento
+
+            const result = await handleRenew(user, plano, coupon); // Passando setOutro como argumento
             setOutro(result)
+            console.log('olha um console', discont)
         } catch (error) {
             console.error("Ocorreu um erro ao renovar:", error);
         } finally {
@@ -76,22 +95,43 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro })
                         </svg>
                     </span>
                     <p className='customp'>
+
                         {Descricao}
                     </p>
+
+
                 </li>
+                {
+                    discont === 'Invalid' ? (
+                        <h4 style={{ color: 'red', fontSize: 'smaller' }}>Cupom Invalido</h4>
+                    ) : null
+                }
+
+
+
+
             </ul>
 
 
+
             <div className="button-container">
+
+                <input placeholder="Digite seu cupom"
+                    className="input"
+                    name="text"
+                    type="text"
+                    value={coupon}
+                    onChange={handleCouponChange} />
+
                 <button type="button" onClick={() => handleOkClick(userRenew, plano)} disabled={isProcessing || outro === 'Processando'}>
                     Renovar
                 </button>
                 {isProcessing && <Loader />}
             </div>
-            {qrData && String(outro?.total) === Valor && (
+            {qrData && String(outro?.total + discont) === Valor && (
                 <div>
                     <div>
-                        <h3 className='customh3'>Seu QR Code:</h3>
+                        <h3 className='customh3'>Seu QR Code: R${outro?.total} </h3>
                         <img className="imgee" src={qrData.qrCodeImage} alt="QR Code" />
 
                         <div className="btn-container">
