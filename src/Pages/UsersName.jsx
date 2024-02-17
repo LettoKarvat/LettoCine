@@ -181,7 +181,7 @@ const UsersName = ({ token, setTotalUsers, setLoadingUsers }) => {
                             </li>
 
                         </ul>
-                        <button className="btnR" onClick={() => handleRenewalClick(user)}>Renovar</button>
+                        <button className="btnR" onClick={() => handleRenewalClick(user)}>Ver <br /> Planos </button>
                     </div>
                 </div>
             ))}
@@ -192,10 +192,10 @@ const UsersName = ({ token, setTotalUsers, setLoadingUsers }) => {
 
                 <div className={`renewalBox ${showRenewalBox ? 'renewalBox-visible' : ''}`}>
                     <div className="header">
-                        <h2 className="title">Renovação</h2>
+                        <h2 className="title">PLANOS</h2>
                     </div>
                     <div className='flex-Item'>
-                        <Starter Valor={"35"} Meses={"1 mês"} Descricao={"Menor custo"} plano={1} userRenew={userRenew} setOutro={setOutro} outro={outro} showCouponInput={true} />
+                        <Starter Valor={"35"} Meses={"1 mês"} Descricao={""} plano={1} userRenew={userRenew} setOutro={setOutro} outro={outro} showCouponInput={true} />
                         <Starter Valor={"85"} Meses={"3 meses"} Descricao={"Popular          "} plano={2} userRenew={userRenew} setOutro={setOutro} outro={outro} showCouponInput={false} />
                         <Starter Valor={"150"} Meses={"6 meses"} Descricao={"Maior desconto"} plano={3} userRenew={userRenew} setOutro={setOutro} outro={outro} showCouponInput={false} />
 

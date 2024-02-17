@@ -33,13 +33,10 @@ function Home({ auth, fetchTestData, loadingTest }) {
         <div id="container">
           <div className="loader">
             <br />
-            <br />
-            <br />
-            <img src='..\assets\img\logo4.jpeg' alt='logo' width="250" />
-            <br />
-            <br />
-            <h1 className="loader-text">{auth.user.fullname}</h1>
-            <div className="loader-bar"></div>
+
+            <img src='https://i.imgur.com/d9H6sGg.jpg' alt='logo' width="150" style={{ borderRadius: '50%' }} />
+
+
           </div>
         </div>
       </div>

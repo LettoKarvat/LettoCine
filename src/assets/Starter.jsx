@@ -87,20 +87,21 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, s
 
             </div>
             <ul className="lists">
+                {Descricao ?
+                    <li className="list">
+                        <span>
+                            <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
+                            </svg>
+                        </span>
 
-                <li className="list">
-                    <span>
-                        <svg aria-hidden="true" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.5 12.75l6 6 9-13.5" stroke-linejoin="round" stroke-linecap="round"></path>
-                        </svg>
-                    </span>
-                    <p className='customp'>
+                        <p className='customp'>
 
-                        {Descricao}
-                    </p>
+                            {Descricao}
+                        </p>
 
 
-                </li>
+                    </li> : <br></br>}
                 {
                     discont === 'Invalid' ? (
                         <h4 style={{ color: 'red', fontSize: 'smaller' }}>Cupom Invalido</h4>

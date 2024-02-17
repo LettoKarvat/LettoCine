@@ -22,7 +22,7 @@
 }
 
 .card a {
-  color: lightblue;
+  color: #9c27b0;
   /* Define a cor do link como azul claro */
   text-decoration: none;
   /* Remove o sublinhado do link (opcional, mas muitas vezes usado para estilização) */
@@ -40,22 +40,22 @@
   position: relative;
   padding: 8px 20px;
   border-radius: 7px;
-  border: 1px solid rgb(61, 106, 255);
+  border: 1px solid rgb(0, 105, 105);
   font-size: 12px;
   text-transform: uppercase;
-  font-weight: 500;
   letter-spacing: 2px;
-  background: transparent;
+  background: rgba(22, 142, 142, 0.717);
   color: #fff;
   overflow: hidden;
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-
+  font-family: Arial, sans-serif
 }
 
 .card button:hover {
+  border: 1px solid rgb(61, 106, 255);
   background: rgb(61, 106, 255);
   box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
   -webkit-transition: all 0.2s ease-out;
@@ -388,7 +388,7 @@
 
 .carde__counter-score,
 .carde__btn {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 22px;
   color: var(--main-color);
 }
