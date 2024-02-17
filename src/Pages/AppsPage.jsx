@@ -88,7 +88,7 @@ const AppsPage = ({ auth }) => {
                     </div>
                     <div className="app-box-bottom">
                         <br />
-                        <p>WebTV Player</p>
+                        <p>WebTV Player(site)</p>
                         <Link to="/WebTv">
                             <button className="buttona">
                                 <span className="texta">Instalação</span>

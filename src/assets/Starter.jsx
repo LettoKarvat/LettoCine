@@ -31,7 +31,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, s
         setOutro('Processando')
         setDiscont(0)
         if (coupon) {
-            console.log('chamouuuuuu')
+
             const response = await fetch(import.meta.env.VITE_CUPOM, {
                 method: "POST",
                 headers: {
@@ -48,17 +48,17 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, s
                 const returnCupom = await response.json();
                 setDiscont(returnCupom.result)
                 Valor = Valor - discont;
-                console.log('oiiiiiiii', Valor)
+
             }
         }
-        console.log(user);
+
         try {
 
             const result = await handleRenew(user, plano, coupon); // Passando setOutro como argumento
             setOutro(result)
-            console.log('olha um console', discont)
+
         } catch (error) {
-            console.error("Ocorreu um erro ao renovar:", error);
+            console.error("Ocorreu um erro ao renovar:");
         } finally {
 
             setIsProcessing(false);

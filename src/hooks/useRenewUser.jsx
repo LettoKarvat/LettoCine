@@ -17,7 +17,7 @@ const addItemToCart = async (monthsToRenew, auth, plano) => {
     // Defina um valor padrão ou lide com outros casos, se necessário
     throw new Error(`Plano inválido: ${plano}`);
   }
-  console.log(monthsToRenew, productId)
+
   const response = await fetch(import.meta.env.VITE_CART, {
     method: "POST",
     headers: {
@@ -54,7 +54,7 @@ const performCheckout = async (monthsToRenew, auth, userRenew, plano, coupon) =>
     // Lide com outros valores de plano ou lance um erro, se necessário
     throw new Error(`Plano inválido: ${plano}`);
   }
-  console.log(coupon)
+
   const response = await fetch(import.meta.env.VITE_CHECKOUT, {
     method: "POST",
     headers: {
@@ -88,19 +88,19 @@ export const useRenewUser = () => {
   const handleRenew = async (userRenew, plano, coupon) => {
     try {
       const itemId = await addItemToCart(monthsToRenew, auth, plano);
-      console.log('aqui tbm', coupon)
+
       if (!coupon) {
         coupon = "without";
       }
       const result = await performCheckout(monthsToRenew, auth, userRenew, plano, coupon);
-      console.log(result)
+
       setQrData(result)
-      console.log('denovo', coupon)
+
       return result
 
 
     } catch (error) {
-      console.error("Erro ao renovar usuário:", error);
+      console.error("Erro ao renovar usuário:");
     }
   };
 
