@@ -31,6 +31,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, s
         setOutro('Processando')
         setDiscont(0)
         if (coupon) {
+            console.log('chamouuuuuu')
             const response = await fetch(import.meta.env.VITE_CUPOM, {
                 method: "POST",
                 headers: {
