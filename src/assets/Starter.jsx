@@ -31,7 +31,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, s
         setOutro('Processando')
         setDiscont(0)
         if (coupon) {
-
+            const couponUpperCase = coupon.toUpperCase();
             const response = await fetch(import.meta.env.VITE_CUPOM, {
                 method: "POST",
                 headers: {
@@ -41,7 +41,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, s
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    coupon: coupon
+                    coupon: couponUpperCase
                 })
             });
             if (response.ok) {
