@@ -22,16 +22,20 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, s
         }
     }, [qrData]);
 
-    const handleCouponChange = (e) => {
-        setCoupon(e.target.value);
-    };
+    function handleCouponChange(event) {
+        // Converte o valor do input para letras maiúsculas antes de atualizar o estado
+        const upperCaseValue = event.target.value.toUpperCase();
+        setCoupon(upperCaseValue); // Supondo que setCoupon seja a função que atualiza o estado do cupom
+    }
+
 
     const handleOkClick = async (user, plano) => {
         setIsProcessing(true);
         setOutro('Processando')
         setDiscont(0)
         if (coupon) {
-            const couponUpperCase = coupon.toUpperCase();
+
+            console.log(coupon)
             const response = await fetch(import.meta.env.VITE_CUPOM, {
                 method: "POST",
                 headers: {
@@ -41,7 +45,7 @@ const Starter = ({ Valor, Meses, Descricao, plano, userRenew, setOutro, outro, s
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    coupon: couponUpperCase
+                    coupon: coupon
                 })
             });
             if (response.ok) {
