@@ -37,7 +37,7 @@ function LoginForm({ onLogin, errorMessage }) {
         <p>Login</p>
 
         {/* Mostrar a mensagem de erro se errorMessage existir */}
-        {errorMessage && <div className={styles.error}>Usuário ou senha incorreta</div>}
+        {errorMessage && <div className={styles.error}>Email ou senha incorreta</div>}
         <div className={styles.group}>
           <input
             required
